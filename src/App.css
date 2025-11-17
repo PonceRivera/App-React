@@ -1,0 +1,251 @@
+/* Main application styles */
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+  background: #ffffff;
+}
+
+/* Hero Section */
+.hero-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
+}
+
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: radial-gradient(circle at 20% 50%, rgba(59, 130, 246, 0.3) 0%, transparent 50%),
+                    radial-gradient(circle at 80% 80%, rgba(6, 182, 212, 0.2) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem;
+  color: white;
+}
+
+.hero-content h1 {
+  color: white;
+  font-size: clamp(2.5rem, 6vw, 3.5rem);
+  margin-bottom: 1.5rem;
+  font-weight: 800;
+}
+
+.hero-content h2 {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  font-weight: 600;
+  margin-bottom: 2rem;
+}
+
+.hero-content p {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1.125rem;
+  margin-bottom: 2.5rem;
+}
+
+/* Sections */
+section {
+  padding: 4rem 1rem;
+}
+
+@media (min-width: 768px) {
+  section {
+    padding: 5rem 1rem;
+  }
+}
+
+section.bg-light {
+  background: #f8fafc;
+}
+
+section.bg-dark {
+  background: #1e293b;
+  color: #f1f5f9;
+}
+
+section.bg-dark h2,
+section.bg-dark h3 {
+  color: white;
+}
+
+section.bg-dark p {
+  color: rgba(241, 245, 249, 0.8);
+}
+
+/* Cards and Containers */
+.card {
+  background: white;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  border: 1px solid #e2e8f0;
+}
+
+.card:hover {
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  transform: translateY(-4px);
+  border-color: #cbd5e1;
+}
+
+.card-content {
+  padding: 2rem;
+}
+
+/* Buttons Variants */
+.btn {
+  display: inline-block;
+  padding: 0.875rem 2rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+  text-decoration: none;
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #1e40af 0%, #1e3a8a 100%);
+  color: white;
+  box-shadow: 0 4px 15px rgba(30, 64, 175, 0.3);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(30, 64, 175, 0.4);
+  background: linear-gradient(135deg, #1e3a8a 0%, #172554 100%);
+}
+
+.btn-secondary {
+  background: white;
+  color: #1e40af;
+  border: 2px solid #1e40af;
+}
+
+.btn-secondary:hover {
+  background: #eff6ff;
+}
+
+.btn-outline {
+  background: transparent;
+  color: #1e40af;
+  border: 2px solid #1e40af;
+}
+
+.btn-outline:hover {
+  background: #1e40af;
+  color: white;
+}
+
+/* Form Elements */
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: #1f2937;
+  font-size: 0.95rem;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 2px solid #e2e8f0;
+  border-radius: 0.5rem;
+  font-family: 'Inter', inherit;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background: white;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: #1e40af;
+  box-shadow: 0 0 0 3px rgba(30, 64, 175, 0.1);
+  background: white;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+/* Grid Layouts */
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .grid-2 {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .grid-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.grid-4 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid-4 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Container */
+.container-custom {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
