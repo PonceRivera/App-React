@@ -4,6 +4,7 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 export default function StoresSection() {
   const [activeImageIndex, setActiveImageIndex] = useState(0);
+  const [activePtrImageIndex, setActivePtrImageIndex] = useState(0);
 
   // Imágenes de Racks de Pipe y PTR desde GitHub
   const racksImages = [
@@ -12,6 +13,14 @@ export default function StoresSection() {
     'https://raw.githubusercontent.com/PonceRivera/App-React/main/src/assets/products/rack_3.jpeg',
     'https://raw.githubusercontent.com/PonceRivera/App-React/main/src/assets/products/rack_4.jpeg',
     'https://raw.githubusercontent.com/PonceRivera/App-React/main/src/assets/products/rack_5.jpeg'
+  ];
+
+  // Imágenes de Racks de PTR desde GitHub
+  const ptrImages = [
+    'https://raw.githubusercontent.com/PonceRivera/App-React/main/src/assets/products/ptr1.jpeg',
+    'https://raw.githubusercontent.com/PonceRivera/App-React/main/src/assets/products/ptr2.jpeg',
+    'https://raw.githubusercontent.com/PonceRivera/App-React/main/src/assets/products/ptr3.jpeg',
+    'https://raw.githubusercontent.com/PonceRivera/App-React/main/src/assets/products/ptr4.jpeg'
   ];
 
   const stores = [
@@ -27,11 +36,13 @@ export default function StoresSection() {
     },
     {
       id: 2,
-      title: "Proyectos para nuestros clientes",
-      subtitle: "Galería para inspirarse",
-      color: "#f5f5f5",
+      title: "Racks de PTR",
+      subtitle: "Estructuras versátiles y resistentes",
+      color: "#F0F7FF",
       textColor: "#333",
-      button: "COMPRAR"
+      borderColor: "#0052A6",
+      button: "COMPRAR",
+      hasCarousel: true
     },
     {
       id: 3,
@@ -48,6 +59,14 @@ export default function StoresSection() {
 
   const handleNextImage = () => {
     setActiveImageIndex((prev) => (prev === racksImages.length - 1 ? 0 : prev + 1));
+  };
+
+  const handlePrevPtrImage = () => {
+    setActivePtrImageIndex((prev) => (prev === 0 ? ptrImages.length - 1 : prev - 1));
+  };
+
+  const handleNextPtrImage = () => {
+    setActivePtrImageIndex((prev) => (prev === ptrImages.length - 1 ? 0 : prev + 1));
   };
 
   return (
@@ -125,9 +144,9 @@ export default function StoresSection() {
                     overflow: 'hidden'
                   }}>
                     <motion.img
-                      key={activeImageIndex}
-                      src={racksImages[activeImageIndex]}
-                      alt="Racks de Pipe y PTR"
+                      key={store.id === 1 ? activeImageIndex : activePtrImageIndex}
+                      src={store.id === 1 ? racksImages[activeImageIndex] : ptrImages[activePtrImageIndex]}
+                      alt={store.title}
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}
                       transition={{ duration: 0.5 }}
@@ -140,7 +159,7 @@ export default function StoresSection() {
 
                     {/* Botones de navegación */}
                     <button
-                      onClick={handlePrevImage}
+                      onClick={store.id === 1 ? handlePrevImage : handlePrevPtrImage}
                       style={{
                         position: 'absolute',
                         left: '1rem',
@@ -165,7 +184,7 @@ export default function StoresSection() {
                     </button>
 
                     <button
-                      onClick={handleNextImage}
+                      onClick={store.id === 1 ? handleNextImage : handleNextPtrImage}
                       style={{
                         position: 'absolute',
                         right: '1rem',
@@ -199,18 +218,18 @@ export default function StoresSection() {
                       gap: '0.5rem',
                       zIndex: 10
                     }}>
-                      {racksImages.map((_, idx) => (
+                      {(store.id === 1 ? racksImages : ptrImages).map((_, idx) => (
                         <div
                           key={idx}
                           style={{
-                            width: idx === activeImageIndex ? '24px' : '8px',
+                            width: idx === (store.id === 1 ? activeImageIndex : activePtrImageIndex) ? '24px' : '8px',
                             height: '8px',
-                            background: idx === activeImageIndex ? '#0052A6' : 'rgba(255, 255, 255, 0.5)',
+                            background: idx === (store.id === 1 ? activeImageIndex : activePtrImageIndex) ? '#0052A6' : 'rgba(255, 255, 255, 0.5)',
                             borderRadius: '4px',
                             cursor: 'pointer',
                             transition: 'all 0.3s'
                           }}
-                          onClick={() => setActiveImageIndex(idx)}
+                          onClick={() => store.id === 1 ? setActiveImageIndex(idx) : setActivePtrImageIndex(idx)}
                         />
                       ))}
                     </div>
