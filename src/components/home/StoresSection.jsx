@@ -139,7 +139,7 @@ export default function StoresSection() {
                   <div style={{
                     position: 'relative',
                     width: '100%',
-                    height: '280px',
+                    height: '400px',
                     background: '#000',
                     overflow: 'hidden'
                   }}>
@@ -168,8 +168,8 @@ export default function StoresSection() {
                         background: 'rgba(255, 255, 255, 0.7)',
                         border: 'none',
                         borderRadius: '50%',
-                        width: '40px',
-                        height: '40px',
+                        width: '50px',
+                        height: '50px',
                         display: 'flex',
                         alignItems: 'center',
                         justifyContent: 'center',
@@ -180,7 +180,7 @@ export default function StoresSection() {
                       onMouseEnter={(e) => e.target.style.background = 'rgba(255, 255, 255, 0.9)'}
                       onMouseLeave={(e) => e.target.style.background = 'rgba(255, 255, 255, 0.7)'}
                     >
-                      <ChevronLeft size={20} color="#000" />
+                      <ChevronLeft size={24} color="#000" />
                     </button>
 
                     <button
@@ -193,8 +193,8 @@ export default function StoresSection() {
                         background: 'rgba(255, 255, 255, 0.7)',
                         border: 'none',
                         borderRadius: '50%',
-                        width: '40px',
-                        height: '40px',
+                        width: '50px',
+                        height: '50px',
                         display: 'flex',
                         alignItems: 'center',
                         justifyContent: 'center',
@@ -205,7 +205,7 @@ export default function StoresSection() {
                       onMouseEnter={(e) => e.target.style.background = 'rgba(255, 255, 255, 0.9)'}
                       onMouseLeave={(e) => e.target.style.background = 'rgba(255, 255, 255, 0.7)'}
                     >
-                      <ChevronRight size={20} color="#000" />
+                      <ChevronRight size={24} color="#000" />
                     </button>
 
                     {/* Indicadores de imagen */}
