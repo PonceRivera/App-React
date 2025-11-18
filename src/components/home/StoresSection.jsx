@@ -1,14 +1,27 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 export default function StoresSection() {
+  const [activeImageIndex, setActiveImageIndex] = useState(0);
+
+  // Imágenes de Racks de Pipe y PTR (placeholder URLs que se reemplazarán)
+  const racksImages = [
+    'https://images.unsplash.com/photo-1578926314433-b40dae1b5ecc?w=500&h=400&fit=crop',
+    'https://images.unsplash.com/photo-1578926314433-b40dae1b5ecc?w=500&h=400&fit=crop',
+    'https://images.unsplash.com/photo-1565043666747-69f6646db940?w=500&h=400&fit=crop',
+    'https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=500&h=400&fit=crop',
+    'https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=500&h=400&fit=crop'
+  ];
+
   const stores = [
     {
       id: 1,
-      title: "Productos estándar",
-      subtitle: "Productos que se entregan montados",
+      title: "Racks de Pipe y PTR",
+      subtitle: "Estructuras modulares de alta calidad",
       color: "#1C1C1C",
-      button: "COMPRAR"
+      button: "COMPRAR",
+      hasCarousel: true
     },
     {
       id: 2,
@@ -26,6 +39,14 @@ export default function StoresSection() {
       button: "CONFIGURAR"
     }
   ];
+
+  const handlePrevImage = () => {
+    setActiveImageIndex((prev) => (prev === 0 ? racksImages.length - 1 : prev - 1));
+  };
+
+  const handleNextImage = () => {
+    setActiveImageIndex((prev) => (prev === racksImages.length - 1 ? 0 : prev + 1));
+  };
 
   return (
     <section style={{
@@ -69,7 +90,7 @@ export default function StoresSection() {
               style={{
                 background: store.color,
                 color: store.textColor || 'white',
-                padding: '3rem 2rem',
+                padding: store.hasCarousel ? '0' : '3rem 2rem',
                 borderRadius: '0.5rem',
                 display: 'flex',
                 flexDirection: 'column',
@@ -77,7 +98,9 @@ export default function StoresSection() {
                 minHeight: '300px',
                 boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
                 transition: 'all 0.3s ease',
-                cursor: 'pointer'
+                cursor: 'pointer',
+                overflow: 'hidden',
+                position: 'relative'
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.transform = 'translateY(-5px)';
@@ -88,54 +111,213 @@ export default function StoresSection() {
                 e.currentTarget.style.boxShadow = '0 4px 6px rgba(0, 0, 0, 0.1)';
               }}
             >
-              <div>
-                <h3 style={{
-                  fontSize: '1.5rem',
-                  fontWeight: 'bold',
-                  marginBottom: '0.5rem',
-                  fontFamily: 'Montserrat, sans-serif'
-                }}>
-                  {store.title}
-                </h3>
-                <p style={{
-                  fontSize: '0.95rem',
-                  opacity: 0.9,
-                  lineHeight: 1.5,
-                  fontFamily: 'Montserrat, sans-serif'
-                }}>
-                  {store.subtitle}
-                </p>
-              </div>
+              {store.hasCarousel ? (
+                <>
+                  {/* Carrusel de imágenes */}
+                  <div style={{
+                    position: 'relative',
+                    width: '100%',
+                    height: '280px',
+                    background: '#000',
+                    overflow: 'hidden'
+                  }}>
+                    <motion.img
+                      key={activeImageIndex}
+                      src={racksImages[activeImageIndex]}
+                      alt="Racks de Pipe y PTR"
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      transition={{ duration: 0.5 }}
+                      style={{
+                        width: '100%',
+                        height: '100%',
+                        objectFit: 'cover'
+                      }}
+                    />
 
-              <button style={{
-                background: store.color === '#f5f5f5' ? '#1C1C1C' : 'transparent',
-                color: store.color === '#f5f5f5' ? 'white' : 'inherit',
-                border: store.color === '#f5f5f5' ? 'none' : `2px solid ${store.textColor || 'white'}`,
-                padding: '0.75rem 1.5rem',
-                borderRadius: '2rem',
-                fontSize: '0.85rem',
-                fontWeight: 600,
-                cursor: 'pointer',
-                transition: 'all 0.3s ease',
-                alignSelf: 'flex-start',
-                marginTop: '1.5rem',
-                fontFamily: 'Montserrat, sans-serif'
-              }}
-              onMouseEnter={(e) => {
-                if (store.color === '#f5f5f5') {
-                  e.target.style.background = '#555';
-                } else {
-                  e.target.style.background = store.textColor || 'white';
-                  e.target.style.color = store.color;
-                }
-              }}
-              onMouseLeave={(e) => {
-                e.target.style.background = store.color === '#f5f5f5' ? '#1C1C1C' : 'transparent';
-                e.target.style.color = store.color === '#f5f5f5' ? 'white' : 'inherit';
-              }}
-              >
-                {store.button}
-              </button>
+                    {/* Botones de navegación */}
+                    <button
+                      onClick={handlePrevImage}
+                      style={{
+                        position: 'absolute',
+                        left: '1rem',
+                        top: '50%',
+                        transform: 'translateY(-50%)',
+                        background: 'rgba(255, 255, 255, 0.7)',
+                        border: 'none',
+                        borderRadius: '50%',
+                        width: '40px',
+                        height: '40px',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        cursor: 'pointer',
+                        zIndex: 10,
+                        transition: 'all 0.2s'
+                      }}
+                      onMouseEnter={(e) => e.target.style.background = 'rgba(255, 255, 255, 0.9)'}
+                      onMouseLeave={(e) => e.target.style.background = 'rgba(255, 255, 255, 0.7)'}
+                    >
+                      <ChevronLeft size={20} color="#000" />
+                    </button>
+
+                    <button
+                      onClick={handleNextImage}
+                      style={{
+                        position: 'absolute',
+                        right: '1rem',
+                        top: '50%',
+                        transform: 'translateY(-50%)',
+                        background: 'rgba(255, 255, 255, 0.7)',
+                        border: 'none',
+                        borderRadius: '50%',
+                        width: '40px',
+                        height: '40px',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        cursor: 'pointer',
+                        zIndex: 10,
+                        transition: 'all 0.2s'
+                      }}
+                      onMouseEnter={(e) => e.target.style.background = 'rgba(255, 255, 255, 0.9)'}
+                      onMouseLeave={(e) => e.target.style.background = 'rgba(255, 255, 255, 0.7)'}
+                    >
+                      <ChevronRight size={20} color="#000" />
+                    </button>
+
+                    {/* Indicadores de imagen */}
+                    <div style={{
+                      position: 'absolute',
+                      bottom: '1rem',
+                      left: '50%',
+                      transform: 'translateX(-50%)',
+                      display: 'flex',
+                      gap: '0.5rem',
+                      zIndex: 10
+                    }}>
+                      {racksImages.map((_, idx) => (
+                        <div
+                          key={idx}
+                          style={{
+                            width: idx === activeImageIndex ? '24px' : '8px',
+                            height: '8px',
+                            background: idx === activeImageIndex ? '#0052A6' : 'rgba(255, 255, 255, 0.5)',
+                            borderRadius: '4px',
+                            cursor: 'pointer',
+                            transition: 'all 0.3s'
+                          }}
+                          onClick={() => setActiveImageIndex(idx)}
+                        />
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Contenido */}
+                  <div style={{
+                    padding: '2rem',
+                    background: store.color,
+                    color: store.textColor || 'white'
+                  }}>
+                    <h3 style={{
+                      fontSize: '1.5rem',
+                      fontWeight: 'bold',
+                      marginBottom: '0.5rem',
+                      fontFamily: 'Montserrat, sans-serif'
+                    }}>
+                      {store.title}
+                    </h3>
+                    <p style={{
+                      fontSize: '0.95rem',
+                      opacity: 0.9,
+                      lineHeight: 1.5,
+                      marginBottom: '1.5rem',
+                      fontFamily: 'Montserrat, sans-serif'
+                    }}>
+                      {store.subtitle}
+                    </p>
+
+                    <button style={{
+                      background: store.color === '#f5f5f5' ? '#1C1C1C' : 'transparent',
+                      color: store.color === '#f5f5f5' ? 'white' : 'inherit',
+                      border: store.color === '#f5f5f5' ? 'none' : `2px solid ${store.textColor || 'white'}`,
+                      padding: '0.75rem 1.5rem',
+                      borderRadius: '2rem',
+                      fontSize: '0.85rem',
+                      fontWeight: 600,
+                      cursor: 'pointer',
+                      transition: 'all 0.3s ease',
+                      fontFamily: 'Montserrat, sans-serif'
+                    }}
+                    onMouseEnter={(e) => {
+                      if (store.color === '#f5f5f5') {
+                        e.target.style.background = '#555';
+                      } else {
+                        e.target.style.background = store.textColor || 'white';
+                        e.target.style.color = store.color;
+                      }
+                    }}
+                    onMouseLeave={(e) => {
+                      e.target.style.background = store.color === '#f5f5f5' ? '#1C1C1C' : 'transparent';
+                      e.target.style.color = store.color === '#f5f5f5' ? 'white' : 'inherit';
+                    }}
+                    >
+                      {store.button}
+                    </button>
+                  </div>
+                </>
+              ) : (
+                <>
+                  <div>
+                    <h3 style={{
+                      fontSize: '1.5rem',
+                      fontWeight: 'bold',
+                      marginBottom: '0.5rem',
+                      fontFamily: 'Montserrat, sans-serif'
+                    }}>
+                      {store.title}
+                    </h3>
+                    <p style={{
+                      fontSize: '0.95rem',
+                      opacity: 0.9,
+                      lineHeight: 1.5,
+                      fontFamily: 'Montserrat, sans-serif'
+                    }}>
+                      {store.subtitle}
+                    </p>
+                  </div>
+
+                  <button style={{
+                    background: store.color === '#f5f5f5' ? '#1C1C1C' : 'transparent',
+                    color: store.color === '#f5f5f5' ? 'white' : 'inherit',
+                    border: store.color === '#f5f5f5' ? 'none' : `2px solid ${store.textColor || 'white'}`,
+                    padding: '0.75rem 1.5rem',
+                    borderRadius: '2rem',
+                    fontSize: '0.85rem',
+                    fontWeight: 600,
+                    cursor: 'pointer',
+                    transition: 'all 0.3s ease',
+                    alignSelf: 'flex-start',
+                    marginTop: '1.5rem',
+                    fontFamily: 'Montserrat, sans-serif'
+                  }}
+                  onMouseEnter={(e) => {
+                    if (store.color === '#f5f5f5') {
+                      e.target.style.background = '#555';
+                    } else {
+                      e.target.style.background = store.textColor || 'white';
+                      e.target.style.color = store.color;
+                    }
+                  }}
+                  onMouseLeave={(e) => {
+                    e.target.style.background = store.color === '#f5f5f5' ? '#1C1C1C' : 'transparent';
+                    e.target.style.color = store.color === '#f5f5f5' ? 'white' : 'inherit';
+                  }}
+                  >
+                    {store.button}
+                  </button>
+                </>
+              )}
             </motion.div>
           ))}
         </div>
