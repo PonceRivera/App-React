@@ -5,13 +5,13 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 export default function StoresSection() {
   const [activeImageIndex, setActiveImageIndex] = useState(0);
 
-  // Imágenes de Racks de Pipe y PTR
+  // Imágenes de Racks de Pipe y PTR desde GitHub
   const racksImages = [
-    '/src/assets/products/WhatsApp Image 2025-11-17 at 8.31.35 PM.jpeg',
-    '/src/assets/products/WhatsApp Image 2025-11-17 at 8.31.35 PM (1).jpeg',
-    '/src/assets/products/WhatsApp Image 2025-11-17 at 8.31.36 PM.jpeg',
-    '/src/assets/products/WhatsApp Image 2025-11-17 at 8.31.36 PM (1).jpeg',
-    '/src/assets/products/WhatsApp Image 2025-11-17 at 8.31.36 PM (2).jpeg'
+    'https://raw.githubusercontent.com/PonceRivera/App-React/main/src/assets/products/rack_1.jpeg',
+    'https://raw.githubusercontent.com/PonceRivera/App-React/main/src/assets/products/rack_2.jpeg',
+    'https://raw.githubusercontent.com/PonceRivera/App-React/main/src/assets/products/rack_3.jpeg',
+    'https://raw.githubusercontent.com/PonceRivera/App-React/main/src/assets/products/rack_4.jpeg',
+    'https://raw.githubusercontent.com/PonceRivera/App-React/main/src/assets/products/rack_5.jpeg'
   ];
 
   const stores = [
