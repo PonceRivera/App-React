@@ -5,13 +5,13 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 export default function StoresSection() {
   const [activeImageIndex, setActiveImageIndex] = useState(0);
 
-  // Imágenes de Racks de Pipe y PTR (placeholder URLs que se reemplazarán)
+  // Imágenes de Racks de Pipe y PTR
   const racksImages = [
-    'https://images.unsplash.com/photo-1578926314433-b40dae1b5ecc?w=500&h=400&fit=crop',
-    'https://images.unsplash.com/photo-1578926314433-b40dae1b5ecc?w=500&h=400&fit=crop',
-    'https://images.unsplash.com/photo-1565043666747-69f6646db940?w=500&h=400&fit=crop',
-    'https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=500&h=400&fit=crop',
-    'https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=500&h=400&fit=crop'
+    '/src/assets/products/WhatsApp Image 2025-11-17 at 8.31.35 PM.jpeg',
+    '/src/assets/products/WhatsApp Image 2025-11-17 at 8.31.35 PM (1).jpeg',
+    '/src/assets/products/WhatsApp Image 2025-11-17 at 8.31.36 PM.jpeg',
+    '/src/assets/products/WhatsApp Image 2025-11-17 at 8.31.36 PM (1).jpeg',
+    '/src/assets/products/WhatsApp Image 2025-11-17 at 8.31.36 PM (2).jpeg'
   ];
 
   const stores = [
@@ -19,7 +19,9 @@ export default function StoresSection() {
       id: 1,
       title: "Racks de Pipe y PTR",
       subtitle: "Estructuras modulares de alta calidad",
-      color: "#1C1C1C",
+      color: "#F0F7FF",
+      textColor: "#333",
+      borderColor: "#0052A6",
       button: "COMPRAR",
       hasCarousel: true
     },
@@ -96,6 +98,7 @@ export default function StoresSection() {
                 flexDirection: 'column',
                 justifyContent: 'space-between',
                 minHeight: '300px',
+                border: store.borderColor ? `2px solid ${store.borderColor}` : 'none',
                 boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
                 transition: 'all 0.3s ease',
                 cursor: 'pointer',
@@ -217,7 +220,8 @@ export default function StoresSection() {
                   <div style={{
                     padding: '2rem',
                     background: store.color,
-                    color: store.textColor || 'white'
+                    color: store.textColor || 'white',
+                    borderTop: store.borderColor ? `2px solid ${store.borderColor}` : 'none'
                   }}>
                     <h3 style={{
                       fontSize: '1.5rem',
