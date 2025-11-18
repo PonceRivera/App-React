@@ -1,6 +1,5 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ChevronRight } from 'lucide-react';
 
 export default function NewsSection() {
   const newsItems = [
@@ -22,8 +21,8 @@ export default function NewsSection() {
     {
       id: 3,
       title: "Nuevos productos",
-      subtitle: "For warehouses and factories",
-      color: "#3d3d3d",
+      subtitle: "Diseños innovadores para tu empresa",
+      color: "#0052A6",
       button: "DESCUBRIR"
     },
     {
@@ -39,7 +38,8 @@ export default function NewsSection() {
   return (
     <section style={{
       padding: '5rem 1rem',
-      background: '#ffffff'
+      background: '#ffffff',
+      fontFamily: 'Montserrat, sans-serif'
     }}>
       <div style={{
         maxWidth: '1280px',
@@ -55,7 +55,8 @@ export default function NewsSection() {
             fontWeight: 700,
             marginBottom: '3rem',
             textAlign: 'left',
-            color: '#333'
+            color: '#333',
+            fontFamily: 'Montserrat, sans-serif'
           }}
         >
           News
@@ -99,14 +100,16 @@ export default function NewsSection() {
                 <h3 style={{
                   fontSize: '1.375rem',
                   fontWeight: 'bold',
-                  marginBottom: '0.5rem'
+                  marginBottom: '0.5rem',
+                  fontFamily: 'Montserrat, sans-serif'
                 }}>
                   {item.title}
                 </h3>
                 <p style={{
                   fontSize: '0.9rem',
                   opacity: 0.85,
-                  lineHeight: 1.5
+                  lineHeight: 1.5,
+                  fontFamily: 'Montserrat, sans-serif'
                 }}>
                   {item.subtitle}
                 </p>
@@ -123,7 +126,8 @@ export default function NewsSection() {
                 cursor: 'pointer',
                 transition: 'all 0.3s ease',
                 alignSelf: 'flex-start',
-                marginTop: '1.5rem'
+                marginTop: '1.5rem',
+                fontFamily: 'Montserrat, sans-serif'
               }}
               onMouseEnter={(e) => {
                 e.target.style.background = item.textColor || 'white';

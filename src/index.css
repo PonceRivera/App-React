@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Sora:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap');
 
 * {
   margin: 0;
@@ -7,11 +7,11 @@
 }
 
 :root {
-  --primary: #1e40af;
-  --primary-dark: #1e3a8a;
-  --primary-light: #3b82f6;
-  --secondary: #0f172a;
-  --accent: #06b6d4;
+  --primary: #0052A6;
+  --primary-dark: #1C1C1C;
+  --primary-light: #FFFFFF;
+  --secondary: #1C1C1C;
+  --accent: #FF7A00;
   --success: #10b981;
   --danger: #ef4444;
   --warning: #f59e0b;
@@ -26,7 +26,7 @@
   --gray-800: #1e293b;
   --gray-900: #0f172a;
 
-  font-family: 'Inter', 'Sora', system-ui, -apple-system, sans-serif;
+  font-family: 'Montserrat', system-ui, -apple-system, sans-serif;
   font-size: 16px;
   line-height: 1.6;
   font-weight: 400;

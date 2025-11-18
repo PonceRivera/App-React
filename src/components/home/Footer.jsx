@@ -4,13 +4,14 @@ import { Send } from 'lucide-react';
 export default function Footer() {
   return (
     <footer style={{
-      background: '#2c2c2c',
+      background: '#1C1C1C',
       color: '#e0e0e0',
-      padding: '3rem 2rem 2rem'
+      padding: '3rem 2rem 2rem',
+      fontFamily: 'Montserrat, sans-serif'
     }}>
       {/* Newsletter Section */}
       <div style={{
-        background: '#c41e3a',
+        background: '#0052A6',
         color: 'white',
         padding: '2.5rem 2rem',
         textAlign: 'center',
@@ -20,14 +21,16 @@ export default function Footer() {
         <h3 style={{
           fontSize: '1.75rem',
           fontWeight: 'bold',
-          marginBottom: '0.5rem'
+          marginBottom: '0.5rem',
+          fontFamily: 'Montserrat, sans-serif'
         }}>
           MANTÉNGASE EN CONTACTO
         </h3>
         <p style={{ 
           fontSize: '0.95rem',
           marginBottom: '1.5rem',
-          color: 'rgba(255, 255, 255, 0.95)'
+          color: 'rgba(255, 255, 255, 0.95)',
+          fontFamily: 'Montserrat, sans-serif'
         }}>
           Suscríbase a nuestro boletín (máximo 1 por mes)
         </p>
@@ -47,12 +50,13 @@ export default function Footer() {
               borderRadius: '0.25rem',
               fontSize: '0.95rem',
               background: 'white',
-              color: '#333'
+              color: '#333',
+              fontFamily: 'Montserrat, sans-serif'
             }}
           />
           <button style={{
             padding: '0.75rem 1.5rem',
-            background: '#0066cc',
+            background: '#FF7A00',
             border: 'none',
             color: 'white',
             borderRadius: '0.25rem',
@@ -60,7 +64,8 @@ export default function Footer() {
             fontSize: '1rem',
             display: 'flex',
             alignItems: 'center',
-            gap: '0.5rem'
+            gap: '0.5rem',
+            fontFamily: 'Montserrat, sans-serif'
           }}>
             <Send size={18} />
           </button>
@@ -83,28 +88,29 @@ export default function Footer() {
             textTransform: 'uppercase',
             marginBottom: '1rem',
             letterSpacing: '0.1em',
-            color: 'white'
+            color: 'white',
+            fontFamily: 'Montserrat, sans-serif'
           }}>
             NUESTROS PRODUCTOS
           </h4>
           <ul style={{ listStyle: 'none', padding: 0 }}>
             <li style={{ marginBottom: '0.5rem' }}>
-              <a href="#" style={{ color: '#ccc', textDecoration: 'none', fontSize: '0.9rem' }}>
+              <a href="#" style={{ color: '#ccc', textDecoration: 'none', fontSize: '0.9rem', fontFamily: 'Montserrat, sans-serif' }}>
                 Productos estándar
               </a>
             </li>
             <li style={{ marginBottom: '0.5rem' }}>
-              <a href="#" style={{ color: '#ccc', textDecoration: 'none', fontSize: '0.9rem' }}>
+              <a href="#" style={{ color: '#ccc', textDecoration: 'none', fontSize: '0.9rem', fontFamily: 'Montserrat, sans-serif' }}>
                 Productos configurados
               </a>
             </li>
             <li style={{ marginBottom: '0.5rem' }}>
-              <a href="#" style={{ color: '#ccc', textDecoration: 'none', fontSize: '0.9rem' }}>
+              <a href="#" style={{ color: '#ccc', textDecoration: 'none', fontSize: '0.9rem', fontFamily: 'Montserrat, sans-serif' }}>
                 Componentes
               </a>
             </li>
             <li>
-              <a href="#" style={{ color: '#ccc', textDecoration: 'none', fontSize: '0.9rem' }}>
+              <a href="#" style={{ color: '#ccc', textDecoration: 'none', fontSize: '0.9rem', fontFamily: 'Montserrat, sans-serif' }}>
                 Descargar catálogos
               </a>
             </li>
@@ -118,28 +124,29 @@ export default function Footer() {
             textTransform: 'uppercase',
             marginBottom: '1rem',
             letterSpacing: '0.1em',
-            color: 'white'
+            color: 'white',
+            fontFamily: 'Montserrat, sans-serif'
           }}>
-            TRILOGIQ.COM
+            SOLID
           </h4>
           <ul style={{ listStyle: 'none', padding: 0 }}>
             <li style={{ marginBottom: '0.5rem' }}>
-              <a href="#" style={{ color: '#ccc', textDecoration: 'none', fontSize: '0.9rem' }}>
+              <a href="#" style={{ color: '#ccc', textDecoration: 'none', fontSize: '0.9rem', fontFamily: 'Montserrat, sans-serif' }}>
                 Contáctarnos
               </a>
             </li>
             <li style={{ marginBottom: '0.5rem' }}>
-              <a href="#" style={{ color: '#ccc', textDecoration: 'none', fontSize: '0.9rem' }}>
+              <a href="#" style={{ color: '#ccc', textDecoration: 'none', fontSize: '0.9rem', fontFamily: 'Montserrat, sans-serif' }}>
                 Términos y Condiciones
               </a>
             </li>
             <li style={{ marginBottom: '0.5rem' }}>
-              <a href="#" style={{ color: '#ccc', textDecoration: 'none', fontSize: '0.9rem' }}>
+              <a href="#" style={{ color: '#ccc', textDecoration: 'none', fontSize: '0.9rem', fontFamily: 'Montserrat, sans-serif' }}>
                 Aviso Legal
               </a>
             </li>
             <li>
-              <a href="#" style={{ color: '#ccc', textDecoration: 'none', fontSize: '0.9rem' }}>
+              <a href="#" style={{ color: '#ccc', textDecoration: 'none', fontSize: '0.9rem', fontFamily: 'Montserrat, sans-serif' }}>
                 Cookies
               </a>
             </li>
@@ -153,29 +160,30 @@ export default function Footer() {
             textTransform: 'uppercase',
             marginBottom: '1rem',
             letterSpacing: '0.1em',
-            color: 'white'
+            color: 'white',
+            fontFamily: 'Montserrat, sans-serif'
           }}>
-            GRUPO TRILOGIQ
+            EMPRESA
           </h4>
           <ul style={{ listStyle: 'none', padding: 0 }}>
             <li style={{ marginBottom: '0.5rem' }}>
-              <a href="#" style={{ color: '#ccc', textDecoration: 'none', fontSize: '0.9rem' }}>
+              <a href="#" style={{ color: '#ccc', textDecoration: 'none', fontSize: '0.9rem', fontFamily: 'Montserrat, sans-serif' }}>
                 Sobre nosotros
               </a>
             </li>
             <li style={{ marginBottom: '0.5rem' }}>
-              <a href="#" style={{ color: '#ccc', textDecoration: 'none', fontSize: '0.9rem' }}>
+              <a href="#" style={{ color: '#ccc', textDecoration: 'none', fontSize: '0.9rem', fontFamily: 'Montserrat, sans-serif' }}>
                 Servicios
               </a>
             </li>
             <li style={{ marginBottom: '0.5rem' }}>
-              <a href="#" style={{ color: '#ccc', textDecoration: 'none', fontSize: '0.9rem' }}>
+              <a href="#" style={{ color: '#ccc', textDecoration: 'none', fontSize: '0.9rem', fontFamily: 'Montserrat, sans-serif' }}>
                 Clientes
               </a>
             </li>
             <li>
-              <a href="#" style={{ color: '#ccc', textDecoration: 'none', fontSize: '0.9rem' }}>
-                Publicaciones financieras
+              <a href="#" style={{ color: '#ccc', textDecoration: 'none', fontSize: '0.9rem', fontFamily: 'Montserrat, sans-serif' }}>
+                Publicaciones
               </a>
             </li>
           </ul>
@@ -192,9 +200,10 @@ export default function Footer() {
         flexWrap: 'wrap',
         gap: '1rem',
         fontSize: '0.85rem',
-        color: '#999'
+        color: '#999',
+        fontFamily: 'Montserrat, sans-serif'
       }}>
-        <p>© 2024 Trilogiq SA. Todos los derechos reservados.</p>
+        <p>© 2024 SOLID. Todos los derechos reservados.</p>
         <select style={{
           background: 'transparent',
           border: '1px solid #666',
@@ -202,7 +211,8 @@ export default function Footer() {
           padding: '0.5rem 1rem',
           borderRadius: '0.25rem',
           cursor: 'pointer',
-          fontSize: '0.85rem'
+          fontSize: '0.85rem',
+          fontFamily: 'Montserrat, sans-serif'
         }}>
           <option>ES - Español</option>
           <option>EN - English</option>

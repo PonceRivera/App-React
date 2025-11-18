@@ -25,7 +25,8 @@ export default function ContactSection() {
   return (
     <section id="contact" style={{
       padding: '5rem 1rem',
-      background: '#f5f5f5'
+      background: '#f5f5f5',
+      fontFamily: 'Montserrat, sans-serif'
     }}>
       <div style={{
         maxWidth: '1280px',
@@ -48,7 +49,8 @@ export default function ContactSection() {
             fontSize: 'clamp(2rem, 5vw, 3rem)',
             fontWeight: 700,
             marginBottom: '2rem',
-            color: '#333'
+            color: '#333',
+            fontFamily: 'Montserrat, sans-serif'
           }}>
             ¿TIENE ALGUNA PREGUNTA?
           </h2>
@@ -56,7 +58,8 @@ export default function ContactSection() {
             fontSize: '1rem',
             lineHeight: 1.8,
             color: '#666',
-            marginBottom: '2rem'
+            marginBottom: '2rem',
+            fontFamily: 'Montserrat, sans-serif'
           }}>
             Contáctenos para discutir sus requerimientos.
           </p>
@@ -71,15 +74,17 @@ export default function ContactSection() {
                 fontSize: '1.125rem',
                 fontWeight: 700,
                 marginBottom: '0.5rem',
-                color: '#333'
+                color: '#333',
+                fontFamily: 'Montserrat, sans-serif'
               }}>
                 Email
               </h3>
               <p style={{
                 color: '#666',
-                fontSize: '0.95rem'
+                fontSize: '0.95rem',
+                fontFamily: 'Montserrat, sans-serif'
               }}>
-                contacto@trilogiq.com
+                contacto@solid.com
               </p>
             </div>
 
@@ -88,13 +93,15 @@ export default function ContactSection() {
                 fontSize: '1.125rem',
                 fontWeight: 700,
                 marginBottom: '0.5rem',
-                color: '#333'
+                color: '#333',
+                fontFamily: 'Montserrat, sans-serif'
               }}>
                 Teléfono
               </h3>
               <p style={{
                 color: '#666',
-                fontSize: '0.95rem'
+                fontSize: '0.95rem',
+                fontFamily: 'Montserrat, sans-serif'
               }}>
                 +34 91 000 0000
               </p>
@@ -105,13 +112,15 @@ export default function ContactSection() {
                 fontSize: '1.125rem',
                 fontWeight: 700,
                 marginBottom: '0.5rem',
-                color: '#333'
+                color: '#333',
+                fontFamily: 'Montserrat, sans-serif'
               }}>
                 Horario
               </h3>
               <p style={{
                 color: '#666',
-                fontSize: '0.95rem'
+                fontSize: '0.95rem',
+                fontFamily: 'Montserrat, sans-serif'
               }}>
                 Lun - Vie: 9:00 - 18:00
               </p>
@@ -149,9 +158,10 @@ export default function ContactSection() {
                 fontSize: '0.95rem',
                 borderRadius: '0.375rem',
                 transition: 'all 0.2s ease',
-                outline: 'none'
+                outline: 'none',
+                fontFamily: 'Montserrat, sans-serif'
               }}
-              onFocus={e => e.target.style.borderColor = '#0066cc'}
+              onFocus={e => e.target.style.borderColor = '#0052A6'}
               onBlur={e => e.target.style.borderColor = '#e0e0e0'}
             />
             <input
@@ -169,9 +179,10 @@ export default function ContactSection() {
                 fontSize: '0.95rem',
                 borderRadius: '0.375rem',
                 transition: 'all 0.2s ease',
-                outline: 'none'
+                outline: 'none',
+                fontFamily: 'Montserrat, sans-serif'
               }}
-              onFocus={e => e.target.style.borderColor = '#0066cc'}
+              onFocus={e => e.target.style.borderColor = '#0052A6'}
               onBlur={e => e.target.style.borderColor = '#e0e0e0'}
             />
             <input
@@ -190,9 +201,10 @@ export default function ContactSection() {
                 fontSize: '0.95rem',
                 borderRadius: '0.375rem',
                 transition: 'all 0.2s ease',
-                outline: 'none'
+                outline: 'none',
+                fontFamily: 'Montserrat, sans-serif'
               }}
-              onFocus={e => e.target.style.borderColor = '#0066cc'}
+              onFocus={e => e.target.style.borderColor = '#0052A6'}
               onBlur={e => e.target.style.borderColor = '#e0e0e0'}
             />
             <textarea
@@ -213,16 +225,16 @@ export default function ContactSection() {
                 transition: 'all 0.2s ease',
                 outline: 'none',
                 resize: 'none',
-                fontFamily: 'inherit'
+                fontFamily: 'Montserrat, sans-serif'
               }}
-              onFocus={e => e.target.style.borderColor = '#0066cc'}
+              onFocus={e => e.target.style.borderColor = '#0052A6'}
               onBlur={e => e.target.style.borderColor = '#e0e0e0'}
             />
             <button
               type="submit"
               style={{
                 width: '100%',
-                background: '#2c2c2c',
+                background: '#0052A6',
                 color: '#ffffff',
                 fontWeight: 700,
                 padding: '0.875rem 1.5rem',
@@ -230,10 +242,11 @@ export default function ContactSection() {
                 borderRadius: '0.375rem',
                 border: 'none',
                 cursor: 'pointer',
-                transition: 'all 0.2s ease'
+                transition: 'all 0.2s ease',
+                fontFamily: 'Montserrat, sans-serif'
               }}
-              onMouseOver={e => e.target.style.background = '#1a1a1a'}
-              onMouseOut={e => e.target.style.background = '#2c2c2c'}
+              onMouseOver={e => e.target.style.background = '#003A7A'}
+              onMouseOut={e => e.target.style.background = '#0052A6'}
             >
               ENVIAR
             </button>

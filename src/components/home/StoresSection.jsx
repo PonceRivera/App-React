@@ -7,7 +7,7 @@ export default function StoresSection() {
       id: 1,
       title: "Productos estándar",
       subtitle: "Productos que se entregan montados",
-      color: "#2c2c2c",
+      color: "#1C1C1C",
       button: "COMPRAR"
     },
     {
@@ -22,7 +22,7 @@ export default function StoresSection() {
       id: 3,
       title: "Configurador de placas",
       subtitle: "Fabricamos placas a la medida",
-      color: "#c41e3a",
+      color: "#0052A6",
       button: "CONFIGURAR"
     }
   ];
@@ -30,7 +30,8 @@ export default function StoresSection() {
   return (
     <section style={{
       padding: '5rem 1rem',
-      background: '#ffffff'
+      background: '#ffffff',
+      fontFamily: 'Montserrat, sans-serif'
     }}>
       <div style={{
         maxWidth: '1280px',
@@ -46,7 +47,8 @@ export default function StoresSection() {
             fontWeight: 700,
             marginBottom: '3rem',
             textAlign: 'left',
-            color: '#333'
+            color: '#333',
+            fontFamily: 'Montserrat, sans-serif'
           }}
         >
           Stores
@@ -90,21 +92,23 @@ export default function StoresSection() {
                 <h3 style={{
                   fontSize: '1.5rem',
                   fontWeight: 'bold',
-                  marginBottom: '0.5rem'
+                  marginBottom: '0.5rem',
+                  fontFamily: 'Montserrat, sans-serif'
                 }}>
                   {store.title}
                 </h3>
                 <p style={{
                   fontSize: '0.95rem',
                   opacity: 0.9,
-                  lineHeight: 1.5
+                  lineHeight: 1.5,
+                  fontFamily: 'Montserrat, sans-serif'
                 }}>
                   {store.subtitle}
                 </p>
               </div>
 
               <button style={{
-                background: store.color === '#f5f5f5' ? '#333' : 'transparent',
+                background: store.color === '#f5f5f5' ? '#1C1C1C' : 'transparent',
                 color: store.color === '#f5f5f5' ? 'white' : 'inherit',
                 border: store.color === '#f5f5f5' ? 'none' : `2px solid ${store.textColor || 'white'}`,
                 padding: '0.75rem 1.5rem',
@@ -114,7 +118,8 @@ export default function StoresSection() {
                 cursor: 'pointer',
                 transition: 'all 0.3s ease',
                 alignSelf: 'flex-start',
-                marginTop: '1.5rem'
+                marginTop: '1.5rem',
+                fontFamily: 'Montserrat, sans-serif'
               }}
               onMouseEnter={(e) => {
                 if (store.color === '#f5f5f5') {
@@ -125,7 +130,7 @@ export default function StoresSection() {
                 }
               }}
               onMouseLeave={(e) => {
-                e.target.style.background = store.color === '#f5f5f5' ? '#333' : 'transparent';
+                e.target.style.background = store.color === '#f5f5f5' ? '#1C1C1C' : 'transparent';
                 e.target.style.color = store.color === '#f5f5f5' ? 'white' : 'inherit';
               }}
               >

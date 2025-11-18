@@ -7,37 +7,37 @@ export default function ServiceCarousel() {
       id: 1,
       title: "Espacios de trabajo",
       subtitle: "Logística de producción",
-      color: "#c41e3a"
+      color: "#0052A6"
     },
     { 
       id: 2,
       title: "Mesas",
       subtitle: "Las Indispensables",
-      color: "#1a5a7a"
+      color: "#A0A4A8"
     },
     { 
       id: 3,
       title: "Carros",
       subtitle: "Transporte logístico interno",
-      color: "#d4a574"
+      color: "#00BFDF"
     },
     { 
       id: 4,
       title: "Puestos de trabajo",
       subtitle: "Montaje, instalación y control",
-      color: "#1e5a9a"
+      color: "#1C1C1C"
     },
     { 
       id: 5,
       title: "Estanterías de flujo",
       subtitle: "FIFO",
-      color: "#c41e3a"
+      color: "#FF7A00"
     },
     { 
       id: 6,
       title: "Expositores",
       subtitle: "La recogida",
-      color: "#1a1a1a"
+      color: "#0052A6"
     }
   ];
 
@@ -47,7 +47,8 @@ export default function ServiceCarousel() {
     <section style={{
       padding: '5rem 1rem',
       background: '#ffffff',
-      textAlign: 'center'
+      textAlign: 'center',
+      fontFamily: 'Montserrat, sans-serif'
     }}>
       <div style={{
         maxWidth: '1280px',
@@ -67,7 +68,8 @@ export default function ServiceCarousel() {
             fontSize: 'clamp(1.875rem, 4.5vw, 2.5rem)',
             fontWeight: 700,
             color: '#333',
-            marginBottom: '1rem'
+            marginBottom: '1rem',
+            fontFamily: 'Montserrat, sans-serif'
           }}>
             Nuestras gamas de productos
           </h2>
@@ -114,14 +116,16 @@ export default function ServiceCarousel() {
               <h3 style={{
                 fontSize: '1.5rem',
                 fontWeight: 'bold',
-                marginBottom: '0.5rem'
+                marginBottom: '0.5rem',
+                fontFamily: 'Montserrat, sans-serif'
               }}>
                 {product.title}
               </h3>
               <p style={{
                 fontSize: '0.95rem',
                 opacity: 0.95,
-                lineHeight: 1.4
+                lineHeight: 1.4,
+                fontFamily: 'Montserrat, sans-serif'
               }}>
                 {product.subtitle}
               </p>
@@ -137,7 +141,8 @@ export default function ServiceCarousel() {
                 cursor: 'pointer',
                 transition: 'all 0.3s ease',
                 alignSelf: 'flex-start',
-                marginTop: '1.5rem'
+                marginTop: '1.5rem',
+                fontFamily: 'Montserrat, sans-serif'
               }}
               onMouseEnter={(e) => {
                 e.target.style.background = 'white';

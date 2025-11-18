@@ -14,7 +14,8 @@ export default function HeroSection() {
       display: 'flex',
       flexDirection: 'column',
       position: 'relative',
-      overflow: 'hidden'
+      overflow: 'hidden',
+      fontFamily: 'Montserrat, sans-serif'
     }}>
       {/* Header */}
       <header style={{
@@ -23,7 +24,7 @@ export default function HeroSection() {
         left: 0,
         right: 0,
         zIndex: 50,
-        background: '#2c2c2c',
+        background: '#1C1C1C',
         borderBottom: '1px solid rgba(255, 255, 255, 0.1)',
         padding: '0'
       }}>
@@ -40,21 +41,22 @@ export default function HeroSection() {
             fontSize: '1.8rem',
             fontWeight: 'bold',
             letterSpacing: '0.15em',
-            fontFamily: 'Arial, sans-serif'
+            fontFamily: 'Montserrat, sans-serif'
           }}>
-            TRILOGIQ <span style={{ color: '#e63946', fontSize: '0.8em' }}>.COM</span>
+            SOLID
           </div>
           <nav style={{
             display: 'flex',
             gap: '2rem',
             alignItems: 'center',
-            fontSize: '0.95rem'
+            fontSize: '0.95rem',
+            fontFamily: 'Montserrat, sans-serif'
           }}>
             <a href="#" style={{ color: 'white', textDecoration: 'none', fontWeight: 500 }}>
-              PROMOCIONES
+              PRODUCTOS
             </a>
             <a href="#" style={{ color: 'white', textDecoration: 'none', fontWeight: 500 }}>
-              PRODUCTOS
+              SERVICIOS
             </a>
             <a href="#" style={{ color: 'white', textDecoration: 'none', fontWeight: 500 }}>
               CATÁLOGOS
@@ -102,10 +104,11 @@ export default function HeroSection() {
               fontWeight: 800,
               marginBottom: '1rem',
               letterSpacing: '-0.025em',
-              color: '#1a1a1a'
+              color: '#1a1a1a',
+              fontFamily: 'Montserrat, sans-serif'
             }}
           >
-            Configurador 3D
+            SOLID
           </motion.h1>
           <motion.p 
             initial={{ opacity: 0 }}
@@ -115,10 +118,11 @@ export default function HeroSection() {
               fontSize: '1.25rem',
               marginBottom: '2.5rem',
               color: '#555',
-              lineHeight: 1.8
+              lineHeight: 1.8,
+              fontFamily: 'Montserrat, sans-serif'
             }}
           >
-            Configuración en línea y precios en tiempo real
+            Soluciones y Diseños Industriales
           </motion.p>
           <motion.button
             initial={{ opacity: 0, scale: 0.9 }}
@@ -126,7 +130,7 @@ export default function HeroSection() {
             transition={{ delay: 0.6, duration: 0.5 }}
             onClick={scrollToContact}
             style={{
-              background: '#2c2c2c',
+              background: '#0052A6',
               color: 'white',
               border: 'none',
               padding: '0.875rem 2.5rem',
@@ -134,19 +138,22 @@ export default function HeroSection() {
               fontSize: '1rem',
               fontWeight: 600,
               cursor: 'pointer',
-              boxShadow: '0 4px 15px rgba(0, 0, 0, 0.2)',
-              transition: 'all 0.3s ease'
+              boxShadow: '0 4px 15px rgba(0, 82, 166, 0.3)',
+              transition: 'all 0.3s ease',
+              fontFamily: 'Montserrat, sans-serif'
             }}
             onMouseEnter={(e) => {
               e.target.style.transform = 'translateY(-2px)';
-              e.target.style.boxShadow = '0 8px 20px rgba(0, 0, 0, 0.3)';
+              e.target.style.boxShadow = '0 8px 20px rgba(0, 82, 166, 0.4)';
+              e.target.style.background = '#003A7A';
             }}
             onMouseLeave={(e) => {
               e.target.style.transform = 'translateY(0)';
-              e.target.style.boxShadow = '0 4px 15px rgba(0, 0, 0, 0.2)';
+              e.target.style.boxShadow = '0 4px 15px rgba(0, 82, 166, 0.3)';
+              e.target.style.background = '#0052A6';
             }}
           >
-            VER
+            VER MÁS
           </motion.button>
         </motion.div>
       </div>
@@ -163,18 +170,18 @@ export default function HeroSection() {
           style={{
             width: '4rem',
             height: '4rem',
-            background: '#0066cc',
+            background: '#0052A6',
             border: 'none',
             borderRadius: '50%',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
             cursor: 'pointer',
-            boxShadow: '0 4px 12px rgba(0, 0, 0, 0.3)',
+            boxShadow: '0 4px 12px rgba(0, 82, 166, 0.3)',
             transition: 'all 0.3s ease'
           }}
-          onMouseEnter={(e) => e.target.style.background = '#0052a3'}
-          onMouseLeave={(e) => e.target.style.background = '#0066cc'}
+          onMouseEnter={(e) => e.target.style.background = '#003A7A'}
+          onMouseLeave={(e) => e.target.style.background = '#0052A6'}
         >
           <MessageCircle size={24} color="white" />
         </motion.button>
