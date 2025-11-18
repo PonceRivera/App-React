@@ -1,116 +1,212 @@
 import React from 'react';
-import { MessageCircle, Facebook, Send } from 'lucide-react';
+import { Send } from 'lucide-react';
 
 export default function Footer() {
   return (
     <footer style={{
-      background: '#0f172a',
-      color: '#cbd5e1',
-      padding: '4rem 1rem',
-      borderTop: '1px solid rgba(226, 232, 240, 0.1)'
+      background: '#2c2c2c',
+      color: '#e0e0e0',
+      padding: '3rem 2rem 2rem'
     }}>
+      {/* Newsletter Section */}
+      <div style={{
+        background: '#c41e3a',
+        color: 'white',
+        padding: '2.5rem 2rem',
+        textAlign: 'center',
+        marginBottom: '3rem',
+        borderRadius: '0.5rem'
+      }}>
+        <h3 style={{
+          fontSize: '1.75rem',
+          fontWeight: 'bold',
+          marginBottom: '0.5rem'
+        }}>
+          MANTÉNGASE EN CONTACTO
+        </h3>
+        <p style={{ 
+          fontSize: '0.95rem',
+          marginBottom: '1.5rem',
+          color: 'rgba(255, 255, 255, 0.95)'
+        }}>
+          Suscríbase a nuestro boletín (máximo 1 por mes)
+        </p>
+        <div style={{
+          display: 'flex',
+          gap: '0.5rem',
+          maxWidth: '400px',
+          margin: '0 auto'
+        }}>
+          <input
+            type="email"
+            placeholder="Email"
+            style={{
+              flex: 1,
+              padding: '0.75rem 1rem',
+              border: 'none',
+              borderRadius: '0.25rem',
+              fontSize: '0.95rem',
+              background: 'white',
+              color: '#333'
+            }}
+          />
+          <button style={{
+            padding: '0.75rem 1.5rem',
+            background: '#0066cc',
+            border: 'none',
+            color: 'white',
+            borderRadius: '0.25rem',
+            cursor: 'pointer',
+            fontSize: '1rem',
+            display: 'flex',
+            alignItems: 'center',
+            gap: '0.5rem'
+          }}>
+            <Send size={18} />
+          </button>
+        </div>
+      </div>
+
+      {/* Footer Content */}
       <div style={{
         maxWidth: '1280px',
         margin: '0 auto',
         display: 'grid',
         gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
         gap: '2rem',
-        textAlign: 'center'
+        marginBottom: '2rem'
       }}>
         <div>
-          <div style={{
-            fontSize: '2.5rem',
+          <h4 style={{
+            fontSize: '0.95rem',
             fontWeight: 'bold',
-            color: '#cbd5e1',
-            marginBottom: '0.5rem'
+            textTransform: 'uppercase',
+            marginBottom: '1rem',
+            letterSpacing: '0.1em',
+            color: 'white'
           }}>
-            SOLID
-          </div>
-          <p style={{ fontSize: '0.95rem', color: '#94a3b8' }}>
-            Soluciones y Diseños<br />Industriales en Saltillo
-          </p>
+            NUESTROS PRODUCTOS
+          </h4>
+          <ul style={{ listStyle: 'none', padding: 0 }}>
+            <li style={{ marginBottom: '0.5rem' }}>
+              <a href="#" style={{ color: '#ccc', textDecoration: 'none', fontSize: '0.9rem' }}>
+                Productos estándar
+              </a>
+            </li>
+            <li style={{ marginBottom: '0.5rem' }}>
+              <a href="#" style={{ color: '#ccc', textDecoration: 'none', fontSize: '0.9rem' }}>
+                Productos configurados
+              </a>
+            </li>
+            <li style={{ marginBottom: '0.5rem' }}>
+              <a href="#" style={{ color: '#ccc', textDecoration: 'none', fontSize: '0.9rem' }}>
+                Componentes
+              </a>
+            </li>
+            <li>
+              <a href="#" style={{ color: '#ccc', textDecoration: 'none', fontSize: '0.9rem' }}>
+                Descargar catálogos
+              </a>
+            </li>
+          </ul>
         </div>
 
-        <div style={{ display: 'flex', gap: '1.5rem', justifyContent: 'center', alignItems: 'flex-start' }}>
-          <a href="#" style={{
-            width: '3rem',
-            height: '3rem',
-            borderRadius: '50%',
-            background: 'rgba(226, 232, 240, 0.1)',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            transition: 'all 0.3s ease',
-            color: '#cbd5e1',
-            border: '1px solid rgba(226, 232, 240, 0.2)'
-          }}
-          onMouseEnter={(e) => {
-            e.target.style.background = 'rgba(30, 64, 175, 0.2)';
-            e.target.style.borderColor = '#3b82f6';
-            e.target.style.color = '#93c5fd';
-          }}
-          onMouseLeave={(e) => {
-            e.target.style.background = 'rgba(226, 232, 240, 0.1)';
-            e.target.style.borderColor = 'rgba(226, 232, 240, 0.2)';
-            e.target.style.color = '#cbd5e1';
+        <div>
+          <h4 style={{
+            fontSize: '0.95rem',
+            fontWeight: 'bold',
+            textTransform: 'uppercase',
+            marginBottom: '1rem',
+            letterSpacing: '0.1em',
+            color: 'white'
           }}>
-            <MessageCircle size={18} />
-          </a>
-          <a href="#" style={{
-            width: '3rem',
-            height: '3rem',
-            borderRadius: '50%',
-            background: 'rgba(226, 232, 240, 0.1)',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            transition: 'all 0.3s ease',
-            color: '#cbd5e1',
-            border: '1px solid rgba(226, 232, 240, 0.2)'
-          }}
-          onMouseEnter={(e) => {
-            e.target.style.background = 'rgba(30, 64, 175, 0.2)';
-            e.target.style.borderColor = '#3b82f6';
-            e.target.style.color = '#93c5fd';
-          }}
-          onMouseLeave={(e) => {
-            e.target.style.background = 'rgba(226, 232, 240, 0.1)';
-            e.target.style.borderColor = 'rgba(226, 232, 240, 0.2)';
-            e.target.style.color = '#cbd5e1';
-          }}>
-            <Facebook size={18} />
-          </a>
-          <a href="#" style={{
-            width: '3rem',
-            height: '3rem',
-            borderRadius: '50%',
-            background: 'rgba(226, 232, 240, 0.1)',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            transition: 'all 0.3s ease',
-            color: '#cbd5e1',
-            border: '1px solid rgba(226, 232, 240, 0.2)'
-          }}
-          onMouseEnter={(e) => {
-            e.target.style.background = 'rgba(30, 64, 175, 0.2)';
-            e.target.style.borderColor = '#3b82f6';
-            e.target.style.color = '#93c5fd';
-          }}
-          onMouseLeave={(e) => {
-            e.target.style.background = 'rgba(226, 232, 240, 0.1)';
-            e.target.style.borderColor = 'rgba(226, 232, 240, 0.2)';
-            e.target.style.color = '#cbd5e1';
-          }}>
-            <Send size={18} />
-          </a>
+            TRILOGIQ.COM
+          </h4>
+          <ul style={{ listStyle: 'none', padding: 0 }}>
+            <li style={{ marginBottom: '0.5rem' }}>
+              <a href="#" style={{ color: '#ccc', textDecoration: 'none', fontSize: '0.9rem' }}>
+                Contáctarnos
+              </a>
+            </li>
+            <li style={{ marginBottom: '0.5rem' }}>
+              <a href="#" style={{ color: '#ccc', textDecoration: 'none', fontSize: '0.9rem' }}>
+                Términos y Condiciones
+              </a>
+            </li>
+            <li style={{ marginBottom: '0.5rem' }}>
+              <a href="#" style={{ color: '#ccc', textDecoration: 'none', fontSize: '0.9rem' }}>
+                Aviso Legal
+              </a>
+            </li>
+            <li>
+              <a href="#" style={{ color: '#ccc', textDecoration: 'none', fontSize: '0.9rem' }}>
+                Cookies
+              </a>
+            </li>
+          </ul>
         </div>
 
-        <div style={{ textAlign: 'right' }}>
-          <p style={{ fontSize: '0.95rem', color: '#64748b' }}>
-            © 2025 SOLID Industriales<br />Todos los derechos reservados
-          </p>
+        <div>
+          <h4 style={{
+            fontSize: '0.95rem',
+            fontWeight: 'bold',
+            textTransform: 'uppercase',
+            marginBottom: '1rem',
+            letterSpacing: '0.1em',
+            color: 'white'
+          }}>
+            GRUPO TRILOGIQ
+          </h4>
+          <ul style={{ listStyle: 'none', padding: 0 }}>
+            <li style={{ marginBottom: '0.5rem' }}>
+              <a href="#" style={{ color: '#ccc', textDecoration: 'none', fontSize: '0.9rem' }}>
+                Sobre nosotros
+              </a>
+            </li>
+            <li style={{ marginBottom: '0.5rem' }}>
+              <a href="#" style={{ color: '#ccc', textDecoration: 'none', fontSize: '0.9rem' }}>
+                Servicios
+              </a>
+            </li>
+            <li style={{ marginBottom: '0.5rem' }}>
+              <a href="#" style={{ color: '#ccc', textDecoration: 'none', fontSize: '0.9rem' }}>
+                Clientes
+              </a>
+            </li>
+            <li>
+              <a href="#" style={{ color: '#ccc', textDecoration: 'none', fontSize: '0.9rem' }}>
+                Publicaciones financieras
+              </a>
+            </li>
+          </ul>
         </div>
+      </div>
+
+      {/* Bottom Footer */}
+      <div style={{
+        borderTop: '1px solid rgba(255, 255, 255, 0.1)',
+        paddingTop: '2rem',
+        display: 'flex',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        flexWrap: 'wrap',
+        gap: '1rem',
+        fontSize: '0.85rem',
+        color: '#999'
+      }}>
+        <p>© 2024 Trilogiq SA. Todos los derechos reservados.</p>
+        <select style={{
+          background: 'transparent',
+          border: '1px solid #666',
+          color: '#ccc',
+          padding: '0.5rem 1rem',
+          borderRadius: '0.25rem',
+          cursor: 'pointer',
+          fontSize: '0.85rem'
+        }}>
+          <option>ES - Español</option>
+          <option>EN - English</option>
+        </select>
       </div>
     </footer>
   );

@@ -2,14 +2,46 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 
 export default function ServiceCarousel() {
-  const services = [
-    { title: "Diseño Industrial", description: "Diseños personalizados para tus necesidades" },
-    { title: "Fabricación PTR", description: "Racks y estructuras de alta calidad" },
-    { title: "Cajas Especiales", description: "Cajas en material HDPE y EZ-PRO" },
-    { title: "Consultoría", description: "Asesoramiento técnico profesional" }
+  const productCategories = [
+    { 
+      id: 1,
+      title: "Espacios de trabajo",
+      subtitle: "Logística de producción",
+      color: "#c41e3a"
+    },
+    { 
+      id: 2,
+      title: "Mesas",
+      subtitle: "Las Indispensables",
+      color: "#1a5a7a"
+    },
+    { 
+      id: 3,
+      title: "Carros",
+      subtitle: "Transporte logístico interno",
+      color: "#d4a574"
+    },
+    { 
+      id: 4,
+      title: "Puestos de trabajo",
+      subtitle: "Montaje, instalación y control",
+      color: "#1e5a9a"
+    },
+    { 
+      id: 5,
+      title: "Estanterías de flujo",
+      subtitle: "FIFO",
+      color: "#c41e3a"
+    },
+    { 
+      id: 6,
+      title: "Expositores",
+      subtitle: "La recogida",
+      color: "#1a1a1a"
+    }
   ];
 
-  const [activeIndex, setActiveIndex] = useState(0);
+  const [activeIndex, setActiveIndex] = useState(null);
 
   return (
     <section style={{
@@ -27,59 +59,97 @@ export default function ServiceCarousel() {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
           style={{
-            marginBottom: '4rem'
+            marginBottom: '4rem',
+            textAlign: 'left'
           }}
         >
           <h2 style={{
-            fontSize: 'clamp(2rem, 4.5vw, 2.75rem)',
+            fontSize: 'clamp(1.875rem, 4.5vw, 2.5rem)',
             fontWeight: 700,
-            color: '#1e40af',
+            color: '#333',
             marginBottom: '1rem'
           }}>
-            NUESTROS SERVICIOS
+            Nuestras gamas de productos
           </h2>
         </motion.div>
 
         <div style={{
           display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
           gap: '1.5rem'
         }}>
-          {services.map((service, index) => (
+          {productCategories.map((product, index) => (
             <motion.div
-              key={index}
+              key={product.id}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.1, duration: 0.5 }}
+              transition={{ delay: index * 0.08, duration: 0.5 }}
               viewport={{ once: true }}
               onMouseEnter={() => setActiveIndex(index)}
+              onMouseLeave={() => setActiveIndex(null)}
               style={{
-                padding: '1.5rem',
-                borderRadius: '0.75rem',
+                background: product.color,
+                color: 'white',
+                padding: '3rem 2rem',
+                borderRadius: '0.5rem',
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'flex-end',
+                minHeight: '280px',
+                boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
                 transition: 'all 0.3s ease',
                 cursor: 'pointer',
-                background: activeIndex === index ? '#1e40af' : '#f1f5f9',
-                color: activeIndex === index ? 'white' : '#1e293b',
-                boxShadow: activeIndex === index 
-                  ? '0 20px 25px rgba(0, 0, 0, 0.1)' 
-                  : '0 4px 6px rgba(0, 0, 0, 0.05)',
-                transform: activeIndex === index ? 'scale(1.05)' : 'scale(1)'
+                position: 'relative',
+                overflow: 'hidden'
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = 'translateY(-5px)';
+                e.currentTarget.style.boxShadow = '0 12px 24px rgba(0, 0, 0, 0.2)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = 'translateY(0)';
+                e.currentTarget.style.boxShadow = '0 4px 6px rgba(0, 0, 0, 0.1)';
               }}
             >
               <h3 style={{
-                fontSize: '1.25rem',
-                fontWeight: 700,
-                marginBottom: '0.75rem'
+                fontSize: '1.5rem',
+                fontWeight: 'bold',
+                marginBottom: '0.5rem'
               }}>
-                {service.title}
+                {product.title}
               </h3>
               <p style={{
-                fontSize: '0.875rem',
-                opacity: 0.9,
-                lineHeight: 1.5
+                fontSize: '0.95rem',
+                opacity: 0.95,
+                lineHeight: 1.4
               }}>
-                {service.description}
+                {product.subtitle}
               </p>
+
+              <button style={{
+                background: 'transparent',
+                color: 'white',
+                border: '2px solid white',
+                padding: '0.6rem 1.2rem',
+                borderRadius: '2rem',
+                fontSize: '0.8rem',
+                fontWeight: 600,
+                cursor: 'pointer',
+                transition: 'all 0.3s ease',
+                alignSelf: 'flex-start',
+                marginTop: '1.5rem'
+              }}
+              onMouseEnter={(e) => {
+                e.target.style.background = 'white';
+                e.target.style.color = product.color;
+              }}
+              onMouseLeave={(e) => {
+                e.target.style.background = 'transparent';
+                e.target.style.color = 'white';
+              }}
+              >
+                DESCUBRIR
+              </button>
             </motion.div>
           ))}
         </div>

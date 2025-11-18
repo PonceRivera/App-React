@@ -25,7 +25,7 @@ export default function ContactSection() {
   return (
     <section id="contact" style={{
       padding: '5rem 1rem',
-      background: 'linear-gradient(to bottom right, #0f172a, #1e293b)'
+      background: '#f5f5f5'
     }}>
       <div style={{
         maxWidth: '1280px',
@@ -41,43 +41,45 @@ export default function ContactSection() {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
           style={{
-            color: '#ffffff'
+            color: '#333'
           }}
         >
-          <p style={{
-            color: '#facc15',
-            marginBottom: '1rem',
-            fontSize: '1rem'
-          }}>
-            Ya llego hasta aquí y sabemos que tiene preguntas
-          </p>
           <h2 style={{
-            fontSize: 'clamp(2.5rem, 5vw, 3.5rem)',
+            fontSize: 'clamp(2rem, 5vw, 3rem)',
             fontWeight: 700,
+            marginBottom: '2rem',
+            color: '#333'
+          }}>
+            ¿TIENE ALGUNA PREGUNTA?
+          </h2>
+          <p style={{
+            fontSize: '1rem',
+            lineHeight: 1.8,
+            color: '#666',
             marginBottom: '2rem'
           }}>
-            HABLEMOS
-          </h2>
+            Contáctenos para discutir sus requerimientos.
+          </p>
 
           <div style={{
             display: 'flex',
             flexDirection: 'column',
-            gap: '2rem',
-            marginBottom: '3rem'
+            gap: '2rem'
           }}>
             <div>
               <h3 style={{
-                fontSize: '1.25rem',
+                fontSize: '1.125rem',
                 fontWeight: 700,
-                marginBottom: '1rem'
+                marginBottom: '0.5rem',
+                color: '#333'
               }}>
-                Estamos En
+                Email
               </h3>
               <p style={{
-                color: 'rgba(255, 255, 255, 0.8)',
-                fontSize: '1rem'
+                color: '#666',
+                fontSize: '0.95rem'
               }}>
-                Saltillo, Coahuila
+                contacto@trilogiq.com
               </p>
             </div>
 
@@ -85,30 +87,16 @@ export default function ContactSection() {
               <h3 style={{
                 fontSize: '1.125rem',
                 fontWeight: 700,
-                marginBottom: '1rem'
+                marginBottom: '0.5rem',
+                color: '#333'
               }}>
-                Tome El Primer Paso<br />Nosotros Nos<br />Encargaremos<br />Del Resto
-              </h3>
-            </div>
-
-            <div>
-              <h3 style={{
-                fontSize: '1.125rem',
-                fontWeight: 700,
-                marginBottom: '1rem'
-              }}>
-                Prefiere Llamarnos?
+                Teléfono
               </h3>
               <p style={{
-                color: 'rgba(255, 255, 255, 0.8)',
-                marginBottom: '0.5rem'
+                color: '#666',
+                fontSize: '0.95rem'
               }}>
-                844 603 5776
-              </p>
-              <p style={{
-                color: 'rgba(255, 255, 255, 0.8)'
-              }}>
-                cotiz@solidindustriales.com
+                +34 91 000 0000
               </p>
             </div>
 
@@ -116,20 +104,16 @@ export default function ContactSection() {
               <h3 style={{
                 fontSize: '1.125rem',
                 fontWeight: 700,
-                marginBottom: '1rem'
+                marginBottom: '0.5rem',
+                color: '#333'
               }}>
-                Horario De Oficina
+                Horario
               </h3>
               <p style={{
-                color: 'rgba(255, 255, 255, 0.8)',
-                marginBottom: '0.25rem'
+                color: '#666',
+                fontSize: '0.95rem'
               }}>
-                Lun - Vie: 9am - 6pm
-              </p>
-              <p style={{
-                color: 'rgba(255, 255, 255, 0.8)'
-              }}>
-                Sab: 10am - 4pm
+                Lun - Vie: 9:00 - 18:00
               </p>
             </div>
           </div>
@@ -140,143 +124,118 @@ export default function ContactSection() {
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          style={{
-            position: 'relative'
-          }}
         >
-          {/* Logo Background */}
-          <div style={{
-            position: 'absolute',
-            inset: 0,
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            opacity: 0.05
-          }}>
-            <div style={{
-              fontSize: '5rem',
-              fontWeight: 800,
-              color: '#ffffff'
-            }}>
-              SOLID
-            </div>
-          </div>
-
-          {/* Form */}
           <form onSubmit={handleSubmit} style={{
             display: 'flex',
             flexDirection: 'column',
             gap: '1.5rem',
-            position: 'relative',
-            zIndex: 10
+            background: 'white',
+            padding: '2.5rem',
+            borderRadius: '0.5rem',
+            boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)'
           }}>
             <input
               name="name"
               value={formData.name}
               onChange={handleChange}
-              placeholder="* Nombre"
+              placeholder="Nombre *"
               required
               style={{
                 width: '100%',
-                background: 'transparent',
-                borderTop: 'none',
-                borderLeft: 'none',
-                borderRight: 'none',
-                borderBottom: '1px solid rgba(255, 255, 255, 0.3)',
-                color: '#ffffff',
-                paddingBottom: '0.5rem',
-                fontSize: '1rem',
+                background: '#f9f9f9',
+                border: '1px solid #e0e0e0',
+                color: '#333',
+                padding: '0.75rem 1rem',
+                fontSize: '0.95rem',
+                borderRadius: '0.375rem',
                 transition: 'all 0.2s ease',
                 outline: 'none'
               }}
-              onFocus={e => e.target.style.borderBottom = '1px solid rgba(255, 255, 255, 1)'}
-              onBlur={e => e.target.style.borderBottom = '1px solid rgba(255, 255, 255, 0.3)'}
+              onFocus={e => e.target.style.borderColor = '#0066cc'}
+              onBlur={e => e.target.style.borderColor = '#e0e0e0'}
             />
             <input
               name="phone"
               value={formData.phone}
               onChange={handleChange}
-              placeholder="* Teléfono"
+              placeholder="Teléfono *"
               required
               style={{
                 width: '100%',
-                background: 'transparent',
-                borderTop: 'none',
-                borderLeft: 'none',
-                borderRight: 'none',
-                borderBottom: '1px solid rgba(255, 255, 255, 0.3)',
-                color: '#ffffff',
-                paddingBottom: '0.5rem',
-                fontSize: '1rem',
+                background: '#f9f9f9',
+                border: '1px solid #e0e0e0',
+                color: '#333',
+                padding: '0.75rem 1rem',
+                fontSize: '0.95rem',
+                borderRadius: '0.375rem',
                 transition: 'all 0.2s ease',
                 outline: 'none'
               }}
-              onFocus={e => e.target.style.borderBottom = '1px solid rgba(255, 255, 255, 1)'}
-              onBlur={e => e.target.style.borderBottom = '1px solid rgba(255, 255, 255, 0.3)'}
+              onFocus={e => e.target.style.borderColor = '#0066cc'}
+              onBlur={e => e.target.style.borderColor = '#e0e0e0'}
             />
             <input
               name="email"
               type="email"
               value={formData.email}
               onChange={handleChange}
-              placeholder="* Email"
+              placeholder="Email *"
               required
               style={{
                 width: '100%',
-                background: 'transparent',
-                borderTop: 'none',
-                borderLeft: 'none',
-                borderRight: 'none',
-                borderBottom: '1px solid rgba(255, 255, 255, 0.3)',
-                color: '#ffffff',
-                paddingBottom: '0.5rem',
-                fontSize: '1rem',
+                background: '#f9f9f9',
+                border: '1px solid #e0e0e0',
+                color: '#333',
+                padding: '0.75rem 1rem',
+                fontSize: '0.95rem',
+                borderRadius: '0.375rem',
                 transition: 'all 0.2s ease',
                 outline: 'none'
               }}
-              onFocus={e => e.target.style.borderBottom = '1px solid rgba(255, 255, 255, 1)'}
-              onBlur={e => e.target.style.borderBottom = '1px solid rgba(255, 255, 255, 0.3)'}
+              onFocus={e => e.target.style.borderColor = '#0066cc'}
+              onBlur={e => e.target.style.borderColor = '#e0e0e0'}
             />
             <textarea
               name="message"
               value={formData.message}
               onChange={handleChange}
-              placeholder="* Escriba su mensaje"
+              placeholder="Mensaje *"
               required
-              rows={6}
+              rows={5}
               style={{
                 width: '100%',
-                background: 'transparent',
-                border: '1px solid rgba(255, 255, 255, 0.3)',
-                color: '#ffffff',
-                padding: '0.5rem',
-                fontSize: '1rem',
+                background: '#f9f9f9',
+                border: '1px solid #e0e0e0',
+                color: '#333',
+                padding: '0.75rem 1rem',
+                fontSize: '0.95rem',
+                borderRadius: '0.375rem',
                 transition: 'all 0.2s ease',
                 outline: 'none',
                 resize: 'none',
                 fontFamily: 'inherit'
               }}
-              onFocus={e => e.target.style.border = '1px solid rgba(255, 255, 255, 1)'}
-              onBlur={e => e.target.style.border = '1px solid rgba(255, 255, 255, 0.3)'}
+              onFocus={e => e.target.style.borderColor = '#0066cc'}
+              onBlur={e => e.target.style.borderColor = '#e0e0e0'}
             />
             <button
               type="submit"
               style={{
                 width: '100%',
-                background: '#1e40af',
+                background: '#2c2c2c',
                 color: '#ffffff',
                 fontWeight: 700,
-                padding: '0.75rem 1.5rem',
-                fontSize: '1.125rem',
+                padding: '0.875rem 1.5rem',
+                fontSize: '1rem',
                 borderRadius: '0.375rem',
                 border: 'none',
                 cursor: 'pointer',
                 transition: 'all 0.2s ease'
               }}
-              onMouseOver={e => e.target.style.background = '#1e3a8a'}
-              onMouseOut={e => e.target.style.background = '#1e40af'}
+              onMouseOver={e => e.target.style.background = '#1a1a1a'}
+              onMouseOut={e => e.target.style.background = '#2c2c2c'}
             >
-              HABLEMOS
+              ENVIAR
             </button>
           </form>
         </motion.div>
