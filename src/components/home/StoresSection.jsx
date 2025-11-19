@@ -275,7 +275,7 @@ export default function StoresSection() {
                       style={{
                         width: '100%',
                         height: '100%',
-                        objectFit: 'cover',
+                        objectFit: 'contain',
                         background: '#f3f3f3',
                         display: 'block'
                       }}
