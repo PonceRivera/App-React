@@ -29,6 +29,22 @@ export default function StoresSection() {
     'https://raw.githubusercontent.com/PonceRivera/App-React/main/src/assets/products/raks%20para%20montaje4.jpeg'
   ];
 
+  const [activeSuministrosIndex, setActiveSuministrosIndex] = useState(0);
+  const [activeHdpeIndex, setActiveHdpeIndex] = useState(0);
+  const suministrosImages = [
+    'https://raw.githubusercontent.com/PonceRivera/App-React/main/src/assets/products/raks%20suministros1.jpeg',
+    'https://raw.githubusercontent.com/PonceRivera/App-React/main/src/assets/products/raks%20suministros2.jpeg',
+    'https://raw.githubusercontent.com/PonceRivera/App-React/main/src/assets/products/raks%20suministros3.jpeg',
+    'https://raw.githubusercontent.com/PonceRivera/App-React/main/src/assets/products/raks%20suministros4.jpeg',
+    'https://raw.githubusercontent.com/PonceRivera/App-React/main/src/assets/products/raks%20suministros5.jpeg',
+    'https://raw.githubusercontent.com/PonceRivera/App-React/main/src/assets/products/raks%20suministros6.jpeg'
+  ];
+  const hdpeImages = [
+    'https://raw.githubusercontent.com/PonceRivera/App-React/main/src/assets/products/HDPE%20negras1.jpeg',
+    'https://raw.githubusercontent.com/PonceRivera/App-React/main/src/assets/products/HDPE%20negras2.jpeg',
+    'https://raw.githubusercontent.com/PonceRivera/App-React/main/src/assets/products/HDPE%20negras3.jpeg'
+  ];
+
   const stores = [
     {
       id: 1,
@@ -74,12 +90,42 @@ export default function StoresSection() {
       setActiveIndex: setActiveMontajeImageIndex,
       handlePrev: () => setActiveMontajeImageIndex((prev) => (prev === 0 ? raksMontajeImages.length - 1 : prev - 1)),
       handleNext: () => setActiveMontajeImageIndex((prev) => (prev === raksMontajeImages.length - 1 ? 0 : prev + 1)),
+    },
+    {
+      id: 4,
+      title: "Racks suministros de materiales",
+      subtitle: "Soluciones para suministro eficiente de materiales",
+      color: "#F0F7FF",
+      textColor: "#333",
+      borderColor: "#0052A6",
+      button: "VER MÁS",
+      hasCarousel: true,
+      images: suministrosImages,
+      activeIndex: activeSuministrosIndex,
+      setActiveIndex: setActiveSuministrosIndex,
+      handlePrev: () => setActiveSuministrosIndex((prev) => (prev === 0 ? suministrosImages.length - 1 : prev - 1)),
+      handleNext: () => setActiveSuministrosIndex((prev) => (prev === suministrosImages.length - 1 ? 0 : prev + 1)),
+    },
+    {
+      id: 5,
+      title: "Cajas HDPE negras",
+      subtitle: "Almacenaje resistente y seguro",
+      color: "#F0F7FF",
+      textColor: "#333",
+      borderColor: "#0052A6",
+      button: "VER MÁS",
+      hasCarousel: true,
+      images: hdpeImages,
+      activeIndex: activeHdpeIndex,
+      setActiveIndex: setActiveHdpeIndex,
+      handlePrev: () => setActiveHdpeIndex((prev) => (prev === 0 ? hdpeImages.length - 1 : prev - 1)),
+      handleNext: () => setActiveHdpeIndex((prev) => (prev === hdpeImages.length - 1 ? 0 : prev + 1)),
     }
   ];
 
   return (
     <section style={{
-      padding: '5rem 1rem',
+      padding: '5rem 1rem 10rem 1rem',
       background: '#ffffff',
       fontFamily: 'Montserrat, sans-serif'
     }}>
