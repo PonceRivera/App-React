@@ -239,7 +239,7 @@ export default function StoresSection() {
                     position: 'relative',
                     width: '100%',
                     height: '400px',
-                    background: '#000',
+                    background: '#f3f3f3',
                     overflow: 'hidden'
                   }}>
                     <motion.img
@@ -252,9 +252,34 @@ export default function StoresSection() {
                       style={{
                         width: '100%',
                         height: '100%',
-                        objectFit: 'cover'
+                        objectFit: 'cover',
+                        background: '#f3f3f3',
+                        display: 'block'
+                      }}
+                      onError={e => {
+                        e.target.onerror = null;
+                        e.target.src = 'https://raw.githubusercontent.com/PonceRivera/App-React/main/src/assets/products/fallback-image.png';
+                        e.target.style.background = '#f3f3f3';
                       }}
                     />
+                    {/* Fallback visual si la imagen no carga */}
+                    {(!store.images[store.activeIndex] || store.images[store.activeIndex] === '') && (
+                      <div style={{
+                        position: 'absolute',
+                        top: 0,
+                        left: 0,
+                        width: '100%',
+                        height: '100%',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        background: '#f3f3f3',
+                        color: '#999',
+                        fontSize: '2rem'
+                      }}>
+                        <span>Imagen no disponible</span>
+                      </div>
+                    )}
                     {/* Botones de navegación */}
                     <button
                       onClick={store.handlePrev}
