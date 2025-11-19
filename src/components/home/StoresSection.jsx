@@ -23,10 +23,10 @@ export default function StoresSection() {
     'https://raw.githubusercontent.com/PonceRivera/App-React/main/src/assets/products/ptr4.jpeg'
   ];
   const raksMontajeImages = [
-    'https://raw.githubusercontent.com/PonceRivera/App-React/main/src/assets/products/raks%20para%20montaje1.jpeg',
-    'https://raw.githubusercontent.com/PonceRivera/App-React/main/src/assets/products/raks%20para%20montaje2.jpeg',
-    'https://raw.githubusercontent.com/PonceRivera/App-React/main/src/assets/products/raks%20para%20montaje3.jpeg',
-    'https://raw.githubusercontent.com/PonceRivera/App-React/main/src/assets/products/raks%20para%20montaje4.jpeg'
+    '/products/raks para montaje1.jpeg',
+    '/products/raks para montaje2.jpeg',
+    '/products/raks para montaje3.jpeg',
+    '/products/raks para montaje4.jpeg'
   ];
 
   const [activeSuministrosIndex, setActiveSuministrosIndex] = useState(0);
