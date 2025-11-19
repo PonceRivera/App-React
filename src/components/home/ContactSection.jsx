@@ -70,7 +70,10 @@ export default function ContactSection() {
             gap: '2rem'
           }}>
             <div>
-              <img src="/logo-solid-vertical2.png" alt="Logo SOLID" style={{ width: '90px', height: '90px', marginBottom: '0.5rem', display: 'block', marginLeft: 'auto', marginRight: 'auto' }} />
+              <div style={{ textAlign: 'center', marginBottom: '1.5rem' }}>
+                <span style={{ fontFamily: 'Montserrat, Arial, sans-serif', fontWeight: 'bold', fontSize: '2rem', color: '#0052A6', letterSpacing: '0.18rem', display: 'block' }}>SOLID</span>
+                <span style={{ fontFamily: 'Montserrat, Arial, sans-serif', fontSize: '1.1rem', color: '#2196f3', letterSpacing: '0.05rem', display: 'block', marginTop: '0.5rem' }}>soluciones y diseños industriales</span>
+              </div>
               <span style={{
                 color: '#0052A6',
                 fontSize: '2.2rem',

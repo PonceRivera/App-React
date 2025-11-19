@@ -23,7 +23,7 @@ export default function Footer() {
         justifyContent: 'center',
         gap: '1rem'
       }}>
-        <img src="/logo-solid-horizontal2.png" alt="Logo SOLID" style={{ width: '180px', height: 'auto', marginBottom: '0.5rem' }} />
+        <img src="/logo5.jpeg" alt="Logo SOLID" style={{ width: '320px', maxWidth: '90vw', height: 'auto', margin: '0 auto 0.5rem auto', display: 'block' }} />
         <h3 style={{
           fontSize: '1.75rem',
           fontWeight: 'bold',
@@ -77,6 +77,10 @@ export default function Footer() {
           </button>
         </div>
       </div>
+          <div style={{ textAlign: 'center', marginBottom: '1.2rem' }}>
+            <span style={{ fontFamily: 'Montserrat, Arial, sans-serif', fontWeight: 'bold', fontSize: '1.5rem', color: '#0052A6', letterSpacing: '0.15rem', display: 'block' }}>SOLID</span>
+            <span style={{ fontFamily: 'Montserrat, Arial, sans-serif', fontSize: '1rem', color: '#2196f3', letterSpacing: '0.04rem', display: 'block', marginTop: '0.3rem' }}>soluciones y diseños industriales</span>
+          </div>
 
       {/* Footer Content */}
       <div style={{

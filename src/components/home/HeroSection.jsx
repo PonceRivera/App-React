@@ -38,21 +38,16 @@ export default function HeroSection() {
         }}>
           <div style={{
             display: 'flex',
-            flexDirection: 'column',
             alignItems: 'center',
-            justifyContent: 'center',
-            gap: '0.5rem',
+            justifyContent: 'flex-start',
+            width: '100%',
+            padding: '1rem 0',
+            gap: '2rem'
           }}>
-            <img src="/logo-solid-vertical1.png" alt="Logo SOLID" style={{ width: '70px', height: '70px', marginBottom: '0.2rem' }} />
-            <span style={{
-              color: '#0052A6',
-              fontSize: '2rem',
-              fontWeight: 'bold',
-              letterSpacing: '0.15em',
-              fontFamily: 'Montserrat, sans-serif',
-              textAlign: 'center',
-              margin: 0
-            }}>SOLID</span>
+            <div style={{ textAlign: 'left', marginLeft: 0 }}>
+              <span style={{ fontFamily: 'Montserrat, Arial, sans-serif', fontWeight: 'bold', fontSize: '2.5rem', color: '#0052A6', letterSpacing: '0.2rem', display: 'block' }}>SOLID</span>
+              <span style={{ fontFamily: 'Montserrat, Arial, sans-serif', fontSize: '1.2rem', color: '#2196f3', letterSpacing: '0.05rem', display: 'block', marginTop: '0.5rem' }}>soluciones y diseños industriales</span>
+            </div>
           </div>
           <nav style={{
             display: 'flex',

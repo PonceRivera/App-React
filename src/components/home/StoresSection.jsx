@@ -3,24 +3,27 @@ import { motion } from 'framer-motion';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 export default function StoresSection() {
-  // Estados para cada carrusel
-  const [activeImageIndex, setActiveImageIndex] = useState(0);
-  const [activePtrImageIndex, setActivePtrImageIndex] = useState(0);
+
+  const [activeHybridIndex, setActiveHybridIndex] = useState(0);
   const [activeMontajeImageIndex, setActiveMontajeImageIndex] = useState(0);
 
-  // Arrays de imágenes
-  const racksImages = [
+  // Combinar solo las tres secciones correctas: Racks de Pipe y PTR, Racks de PTR, y Racks suministro de materiales
+  const hybridRacksImages = [
     'https://raw.githubusercontent.com/PonceRivera/App-React/main/src/assets/products/rack_1.jpeg',
     'https://raw.githubusercontent.com/PonceRivera/App-React/main/src/assets/products/rack_2.jpeg',
     'https://raw.githubusercontent.com/PonceRivera/App-React/main/src/assets/products/rack_3.jpeg',
     'https://raw.githubusercontent.com/PonceRivera/App-React/main/src/assets/products/rack_4.jpeg',
-    'https://raw.githubusercontent.com/PonceRivera/App-React/main/src/assets/products/rack_5.jpeg'
-  ];
-  const ptrImages = [
+    'https://raw.githubusercontent.com/PonceRivera/App-React/main/src/assets/products/rack_5.jpeg',
     'https://raw.githubusercontent.com/PonceRivera/App-React/main/src/assets/products/ptr1.jpeg',
     'https://raw.githubusercontent.com/PonceRivera/App-React/main/src/assets/products/ptr2.jpeg',
     'https://raw.githubusercontent.com/PonceRivera/App-React/main/src/assets/products/ptr3.jpeg',
-    'https://raw.githubusercontent.com/PonceRivera/App-React/main/src/assets/products/ptr4.jpeg'
+    'https://raw.githubusercontent.com/PonceRivera/App-React/main/src/assets/products/ptr4.jpeg',
+    'https://raw.githubusercontent.com/PonceRivera/App-React/main/src/assets/products/raks%20suministros1.jpeg',
+    'https://raw.githubusercontent.com/PonceRivera/App-React/main/src/assets/products/raks%20suministros2.jpeg',
+    'https://raw.githubusercontent.com/PonceRivera/App-React/main/src/assets/products/raks%20suministros3.jpeg',
+    'https://raw.githubusercontent.com/PonceRivera/App-React/main/src/assets/products/raks%20suministros4.jpeg',
+    'https://raw.githubusercontent.com/PonceRivera/App-React/main/src/assets/products/raks%20suministros5.jpeg',
+    'https://raw.githubusercontent.com/PonceRivera/App-React/main/src/assets/products/raks%20suministros6.jpeg'
   ];
   const raksMontajeImages = [
     '/products/raks para montaje1.jpeg',
@@ -68,36 +71,21 @@ export default function StoresSection() {
   const stores = [
     {
       id: 1,
-      title: "Racks de Pipe y PTR",
-      subtitle: "Estructuras modulares de alta calidad",
+      title: "Racks híbridos (Pipe y ptr)",
+      subtitle: "Estructuras modulares de alta calidad - Pipe, PTR y suministros de materiales",
       color: "#F0F7FF",
       textColor: "#333",
       borderColor: "#0052A6",
       button: "COMPRAR",
       hasCarousel: true,
-      images: racksImages,
-      activeIndex: activeImageIndex,
-      setActiveIndex: setActiveImageIndex,
-      handlePrev: () => setActiveImageIndex((prev) => (prev === 0 ? racksImages.length - 1 : prev - 1)),
-      handleNext: () => setActiveImageIndex((prev) => (prev === racksImages.length - 1 ? 0 : prev + 1)),
+      images: hybridRacksImages,
+      activeIndex: activeHybridIndex,
+      setActiveIndex: setActiveHybridIndex,
+      handlePrev: () => setActiveHybridIndex((prev) => (prev === 0 ? hybridRacksImages.length - 1 : prev - 1)),
+      handleNext: () => setActiveHybridIndex((prev) => (prev === hybridRacksImages.length - 1 ? 0 : prev + 1)),
     },
     {
       id: 2,
-      title: "Racks de PTR",
-      subtitle: "Estructuras versátiles y resistentes",
-      color: "#F0F7FF",
-      textColor: "#333",
-      borderColor: "#0052A6",
-      button: "COMPRAR",
-      hasCarousel: true,
-      images: ptrImages,
-      activeIndex: activePtrImageIndex,
-      setActiveIndex: setActivePtrImageIndex,
-      handlePrev: () => setActivePtrImageIndex((prev) => (prev === 0 ? ptrImages.length - 1 : prev - 1)),
-      handleNext: () => setActivePtrImageIndex((prev) => (prev === ptrImages.length - 1 ? 0 : prev + 1)),
-    },
-    {
-      id: 3,
       title: "Soportes de racks para montaje de pantalla y controladores",
       subtitle: "Soluciones para montaje profesional de pantallas y controladores",
       color: "#F0F7FF",
@@ -112,8 +100,8 @@ export default function StoresSection() {
       handleNext: () => setActiveMontajeImageIndex((prev) => (prev === raksMontajeImages.length - 1 ? 0 : prev + 1)),
     },
     {
-      id: 4,
-      title: "Racks suministros de materiales",
+      id: 3,
+      title: "Cajas HDPE negras",
       subtitle: "Soluciones para suministro eficiente de materiales",
       color: "#F0F7FF",
       textColor: "#333",
@@ -127,7 +115,7 @@ export default function StoresSection() {
       handleNext: () => setActiveSuministrosIndex((prev) => (prev === suministrosImages.length - 1 ? 0 : prev + 1)),
     },
     {
-      id: 5,
+      id: 3,
       title: "Cajas HDPE negras",
       subtitle: "Almacenaje resistente y seguro",
       color: "#F0F7FF",
@@ -142,7 +130,7 @@ export default function StoresSection() {
       handleNext: () => setActiveHdpeIndex((prev) => (prev === hdpeImages.length - 1 ? 0 : prev + 1)),
     },
     {
-      id: 6,
+      id: 4,
       title: "Cajas EZ-Pro",
       subtitle: "Cajas plásticas EZ-Pro para almacenamiento industrial",
       color: "#F0F7FF",
@@ -157,7 +145,7 @@ export default function StoresSection() {
       handleNext: () => setActiveEzProIndex((prev) => (prev === ezProImages.length - 1 ? 0 : prev + 1)),
     },
     {
-      id: 7,
+      id: 5,
       title: "Cajas ez-pro con divisiones",
       subtitle: "Cajas plásticas EZ-Pro con divisiones para organización avanzada",
       color: "#F0F7FF",
@@ -173,7 +161,7 @@ export default function StoresSection() {
       wide: true
     },
     {
-      id: 8,
+      id: 6,
       title: "Soportes para tablet",
       subtitle: "Soluciones para montaje de tablets en racks y estaciones",
       color: "#F0F7FF",
