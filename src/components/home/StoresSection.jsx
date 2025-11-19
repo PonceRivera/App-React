@@ -261,7 +261,7 @@ export default function StoresSection() {
                   <div style={{
                     position: 'relative',
                     width: '100%',
-                    height: '400px',
+                    height: '300px',
                     background: '#f3f3f3',
                     overflow: 'hidden'
                   }}>
