@@ -31,6 +31,8 @@ export default function StoresSection() {
 
   const [activeSuministrosIndex, setActiveSuministrosIndex] = useState(0);
   const [activeHdpeIndex, setActiveHdpeIndex] = useState(0);
+  const [activeEzProIndex, setActiveEzProIndex] = useState(0);
+  const [activeTabletIndex, setActiveTabletIndex] = useState(0);
   const suministrosImages = [
     'https://raw.githubusercontent.com/PonceRivera/App-React/main/src/assets/products/raks%20suministros1.jpeg',
     'https://raw.githubusercontent.com/PonceRivera/App-React/main/src/assets/products/raks%20suministros2.jpeg',
@@ -43,6 +45,18 @@ export default function StoresSection() {
     'https://raw.githubusercontent.com/PonceRivera/App-React/main/src/assets/products/HDPE%20negras1.jpeg',
     'https://raw.githubusercontent.com/PonceRivera/App-React/main/src/assets/products/HDPE%20negras2.jpeg',
     'https://raw.githubusercontent.com/PonceRivera/App-React/main/src/assets/products/HDPE%20negras3.jpeg'
+  ];
+  const ezProImages = [
+    'https://raw.githubusercontent.com/PonceRivera/App-React/main/src/assets/products/EZ%20pro1.jpeg',
+    'https://raw.githubusercontent.com/PonceRivera/App-React/main/src/assets/products/EZ%20pro2.jpeg',
+    'https://raw.githubusercontent.com/PonceRivera/App-React/main/src/assets/products/EZ%20pro3.jpeg'
+  ];
+  const tabletImages = [
+    'https://raw.githubusercontent.com/PonceRivera/App-React/main/src/assets/products/soporte%20para%20tablet1.jpeg',
+    'https://raw.githubusercontent.com/PonceRivera/App-React/main/src/assets/products/soporte%20para%20tablet2.jpeg',
+    'https://raw.githubusercontent.com/PonceRivera/App-React/main/src/assets/products/soporte%20para%20tablet3.jpeg',
+    'https://raw.githubusercontent.com/PonceRivera/App-React/main/src/assets/products/soporte%20para%20tablet4.jpeg',
+    'https://raw.githubusercontent.com/PonceRivera/App-React/main/src/assets/products/soporte%20para%20tablet5.jpeg'
   ];
 
   const stores = [
@@ -120,6 +134,37 @@ export default function StoresSection() {
       setActiveIndex: setActiveHdpeIndex,
       handlePrev: () => setActiveHdpeIndex((prev) => (prev === 0 ? hdpeImages.length - 1 : prev - 1)),
       handleNext: () => setActiveHdpeIndex((prev) => (prev === hdpeImages.length - 1 ? 0 : prev + 1)),
+    },
+    {
+      id: 6,
+      title: "Cajas EZ-Pro",
+      subtitle: "Cajas plásticas EZ-Pro para almacenamiento industrial",
+      color: "#F0F7FF",
+      textColor: "#333",
+      borderColor: "#0052A6",
+      button: "VER MÁS",
+      hasCarousel: true,
+      images: ezProImages,
+      activeIndex: activeEzProIndex,
+      setActiveIndex: setActiveEzProIndex,
+      handlePrev: () => setActiveEzProIndex((prev) => (prev === 0 ? ezProImages.length - 1 : prev - 1)),
+      handleNext: () => setActiveEzProIndex((prev) => (prev === ezProImages.length - 1 ? 0 : prev + 1)),
+    },
+    {
+      id: 7,
+      title: "Soportes para tablet",
+      subtitle: "Soluciones para montaje de tablets en racks y estaciones",
+      color: "#F0F7FF",
+      textColor: "#333",
+      borderColor: "#0052A6",
+      button: "VER MÁS",
+      hasCarousel: true,
+      images: tabletImages,
+      activeIndex: activeTabletIndex,
+      setActiveIndex: setActiveTabletIndex,
+      handlePrev: () => setActiveTabletIndex((prev) => (prev === 0 ? tabletImages.length - 1 : prev - 1)),
+      handleNext: () => setActiveTabletIndex((prev) => (prev === tabletImages.length - 1 ? 0 : prev + 1)),
+      wide: true
     }
   ];
 
@@ -175,7 +220,8 @@ export default function StoresSection() {
                 transition: 'all 0.3s ease',
                 cursor: 'pointer',
                 overflow: 'hidden',
-                position: 'relative'
+                position: 'relative',
+                gridColumn: store.wide ? 'span 2' : undefined
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.transform = 'translateY(-5px)';
