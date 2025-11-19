@@ -47,16 +47,16 @@ export default function StoresSection() {
     'https://raw.githubusercontent.com/PonceRivera/App-React/main/src/assets/products/HDPE%20negras3.jpeg'
   ];
   const ezProImages = [
-    'https://raw.githubusercontent.com/PonceRivera/App-React/main/src/assets/products/EZ%20pro1.jpeg',
-    'https://raw.githubusercontent.com/PonceRivera/App-React/main/src/assets/products/EZ%20pro2.jpeg',
-    'https://raw.githubusercontent.com/PonceRivera/App-React/main/src/assets/products/EZ%20pro3.jpeg'
+    '/products/EZ pro1.jpeg',
+    '/products/EZ pro2.jpeg',
+    '/products/EZ pro3.jpeg'
   ];
   const tabletImages = [
-    'https://raw.githubusercontent.com/PonceRivera/App-React/main/src/assets/products/soporte%20para%20tablet1.jpeg',
-    'https://raw.githubusercontent.com/PonceRivera/App-React/main/src/assets/products/soporte%20para%20tablet2.jpeg',
-    'https://raw.githubusercontent.com/PonceRivera/App-React/main/src/assets/products/soporte%20para%20tablet3.jpeg',
-    'https://raw.githubusercontent.com/PonceRivera/App-React/main/src/assets/products/soporte%20para%20tablet4.jpeg',
-    'https://raw.githubusercontent.com/PonceRivera/App-React/main/src/assets/products/soporte%20para%20tablet5.jpeg'
+    '/products/soporte para tablet1.jpeg',
+    '/products/soporte para tablet2.jpeg',
+    '/products/soporte para tablet3.jpeg',
+    '/products/soporte para tablet4.jpeg',
+    '/products/soporte para tablet5.jpeg'
   ];
 
   const stores = [
