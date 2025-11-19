@@ -278,7 +278,10 @@ export default function StoresSection() {
                         objectFit: 'cover',
                         background: '#f3f3f3',
                         display: 'block',
-                        transform: 'rotate(-75deg)'
+                        transform: 'rotate(-90deg)',
+                        position: 'absolute',
+                        top: 0,
+                        left: 0
                       }}
                       onError={e => {
                         e.target.onerror = null;
