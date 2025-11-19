@@ -58,6 +58,12 @@ export default function StoresSection() {
     '/products/soporte para tablet4.jpeg',
     '/products/soporte para tablet5.jpeg'
   ];
+  const ezProDivisionesImages = [
+    '/products/ez-pro con divisiones1.jpeg',
+    '/products/ez-pro con divisiones2.jpeg',
+    '/products/ez-pro con divisiones3.jpeg'
+  ];
+  const [activeEzProDivisionesIndex, setActiveEzProDivisionesIndex] = useState(0);
 
   const stores = [
     {
@@ -152,6 +158,22 @@ export default function StoresSection() {
     },
     {
       id: 7,
+      title: "Cajas ez-pro con divisiones",
+      subtitle: "Cajas plásticas EZ-Pro con divisiones para organización avanzada",
+      color: "#F0F7FF",
+      textColor: "#333",
+      borderColor: "#0052A6",
+      button: "VER MÁS",
+      hasCarousel: true,
+      images: ezProDivisionesImages,
+      activeIndex: activeEzProDivisionesIndex,
+      setActiveIndex: setActiveEzProDivisionesIndex,
+      handlePrev: () => setActiveEzProDivisionesIndex((prev) => (prev === 0 ? ezProDivisionesImages.length - 1 : prev - 1)),
+      handleNext: () => setActiveEzProDivisionesIndex((prev) => (prev === ezProDivisionesImages.length - 1 ? 0 : prev + 1)),
+      wide: true
+    },
+    {
+      id: 8,
       title: "Soportes para tablet",
       subtitle: "Soluciones para montaje de tablets en racks y estaciones",
       color: "#F0F7FF",
