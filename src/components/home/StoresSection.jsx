@@ -218,8 +218,9 @@ export default function StoresSection() {
         </motion.h2>
         <div style={{
           display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-          gap: '2rem'
+          gridTemplateColumns: 'repeat(2, minmax(450px, 1fr))',
+          gap: '2rem',
+          alignItems: 'start'
         }}>
           {stores.map((store, index) => (
             <motion.div
@@ -243,7 +244,7 @@ export default function StoresSection() {
                 cursor: 'pointer',
                 overflow: 'hidden',
                 position: 'relative',
-                gridColumn: store.wide ? 'span 2' : undefined
+                gridColumn: store.wide ? 'span 1' : undefined
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.transform = 'translateY(-5px)';
