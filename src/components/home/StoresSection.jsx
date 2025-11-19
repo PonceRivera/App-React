@@ -1,4 +1,3 @@
-  const [activeRaksMontajeIndex, setActiveRaksMontajeIndex] = useState(0);
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
