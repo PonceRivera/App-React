@@ -16,8 +16,14 @@ export default function Footer() {
         padding: '2.5rem 2rem',
         textAlign: 'center',
         marginBottom: '3rem',
-        borderRadius: '0.5rem'
+        borderRadius: '0.5rem',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+        gap: '1rem'
       }}>
+        <img src="/logo-solid-horizontal2.png" alt="Logo SOLID" style={{ width: '180px', height: 'auto', marginBottom: '0.5rem' }} />
         <h3 style={{
           fontSize: '1.75rem',
           fontWeight: 'bold',

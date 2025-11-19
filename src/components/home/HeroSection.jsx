@@ -37,13 +37,22 @@ export default function HeroSection() {
           alignItems: 'center'
         }}>
           <div style={{
-            color: 'white',
-            fontSize: '1.8rem',
-            fontWeight: 'bold',
-            letterSpacing: '0.15em',
-            fontFamily: 'Montserrat, sans-serif'
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            justifyContent: 'center',
+            gap: '0.5rem',
           }}>
-            SOLID
+            <img src="/logo-solid-vertical1.png" alt="Logo SOLID" style={{ width: '70px', height: '70px', marginBottom: '0.2rem' }} />
+            <span style={{
+              color: '#0052A6',
+              fontSize: '2rem',
+              fontWeight: 'bold',
+              letterSpacing: '0.15em',
+              fontFamily: 'Montserrat, sans-serif',
+              textAlign: 'center',
+              margin: 0
+            }}>SOLID</span>
           </div>
           <nav style={{
             display: 'flex',

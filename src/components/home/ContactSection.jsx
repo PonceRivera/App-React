@@ -70,41 +70,49 @@ export default function ContactSection() {
             gap: '2rem'
           }}>
             <div>
-              <h3 style={{
-                fontSize: '1.125rem',
+              <img src="/logo-solid-vertical2.png" alt="Logo SOLID" style={{ width: '90px', height: '90px', marginBottom: '0.5rem', display: 'block', marginLeft: 'auto', marginRight: 'auto' }} />
+              <span style={{
+                color: '#0052A6',
+                fontSize: '2.2rem',
+                fontWeight: 'bold',
+                letterSpacing: '0.15em',
+                fontFamily: 'Montserrat, sans-serif',
+                textAlign: 'center',
+                margin: 0,
+                display: 'block'
+              }}>SOLID</span>
+              <h2 style={{
+                fontSize: 'clamp(2rem, 5vw, 3rem)',
                 fontWeight: 700,
-                marginBottom: '0.5rem',
+                marginBottom: '1.2rem',
                 color: '#333',
-                fontFamily: 'Montserrat, sans-serif'
+                fontFamily: 'Montserrat, sans-serif',
+                textAlign: 'center'
               }}>
-                Email
-              </h3>
+                ¿TIENE ALGUNA PREGUNTA?
+              </h2>
               <p style={{
+                fontSize: '1rem',
+                lineHeight: 1.8,
                 color: '#666',
-                fontSize: '0.95rem',
-                fontFamily: 'Montserrat, sans-serif'
+                marginBottom: '1.2rem',
+                fontFamily: 'Montserrat, sans-serif',
+                textAlign: 'center'
               }}>
-                contacto@solid.com
+                Puede contactarnos por este medio y le responderemos a la brevedad.
               </p>
-            </div>
-
-            <div>
-              <h3 style={{
-                fontSize: '1.125rem',
-                fontWeight: 700,
-                marginBottom: '0.5rem',
-                color: '#333',
+              <span style={{
+                color: '#0052A6',
+                fontWeight: 'bold',
+                fontSize: '1.1rem',
+                marginBottom: '1.2rem',
+                textAlign: 'center',
+                display: 'block',
+                letterSpacing: '0.05em',
                 fontFamily: 'Montserrat, sans-serif'
               }}>
-                Teléfono
-              </h3>
-              <p style={{
-                color: '#666',
-                fontSize: '0.95rem',
-                fontFamily: 'Montserrat, sans-serif'
-              }}>
-                +34 91 000 0000
-              </p>
+                Soluciones y Diseños Industriales
+              </span>
             </div>
 
             <div>
