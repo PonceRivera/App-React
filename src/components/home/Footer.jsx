@@ -6,9 +6,10 @@ export default function Footer() {
     <footer style={{
       background: '#1C1C1C',
       color: '#e0e0e0',
-      padding: '3rem 2rem 2rem',
+      padding: '3rem 2rem 4rem',
       fontFamily: 'Montserrat, sans-serif',
-      opacity: 1
+      opacity: 1,
+      marginTop: '-1px'
     }}>
       {/* Newsletter Section */}
       <div style={{
@@ -16,7 +17,7 @@ export default function Footer() {
         color: 'white',
         padding: '2.5rem 2rem',
         textAlign: 'center',
-        marginBottom: '3rem',
+        marginBottom: '0',
         borderRadius: '0.5rem',
         display: 'flex',
         flexDirection: 'column',
@@ -89,7 +90,7 @@ export default function Footer() {
           </button>
         </div>
       </div>
-          <div style={{ textAlign: 'center', marginBottom: '1.2rem' }}>
+          <div style={{ textAlign: 'center', marginBottom: '0' }}>
             <span style={{ fontFamily: 'Montserrat, Arial, sans-serif', fontWeight: 'bold', fontSize: '1.5rem', color: '#1C4283', letterSpacing: '0.15rem', display: 'block' }}>SOLID</span>
             <span style={{ fontFamily: 'Montserrat, Arial, sans-serif', fontSize: '1rem', color: '#1C4283', letterSpacing: '0.04rem', display: 'block', marginTop: '0.3rem' }}>soluciones y diseños industriales</span>
           </div>
