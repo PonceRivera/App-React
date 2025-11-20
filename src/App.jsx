@@ -3,9 +3,13 @@ import Home from './pages/Home'
 
 function App() {
   return (
-    <main>
-      <Home />
-    </main>
+    <>
+      <div className="safety-stripes-left"></div>
+      <div className="safety-stripes-right"></div>
+      <main>
+        <Home />
+      </main>
+    </>
   )
 }
 

@@ -7,11 +7,12 @@ export default function Footer() {
       background: '#1C1C1C',
       color: '#e0e0e0',
       padding: '3rem 2rem 2rem',
-      fontFamily: 'Montserrat, sans-serif'
+      fontFamily: 'Montserrat, sans-serif',
+      opacity: 1
     }}>
       {/* Newsletter Section */}
       <div style={{
-        background: '#0052A6',
+        background: '#1C4283',
         color: 'white',
         padding: '2.5rem 2rem',
         textAlign: 'center',
@@ -21,9 +22,10 @@ export default function Footer() {
         flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
-        gap: '1rem'
+        gap: '1rem',
+        opacity: 1
       }}>
-        <img src="/logo5.jpeg" alt="Logo SOLID" style={{ width: '320px', maxWidth: '90vw', height: 'auto', margin: '0 auto 0.5rem auto', display: 'block' }} />
+        <img src="/lgo.jpeg" alt="Logo SOLID" style={{ width: '320px', maxWidth: '90vw', height: 'auto', margin: '0 auto 0.5rem auto', display: 'block', border: 'none', outline: 'none', background: '#1C4283' }} />
         <h3 style={{
           fontSize: '1.75rem',
           fontWeight: 'bold',
@@ -78,8 +80,8 @@ export default function Footer() {
         </div>
       </div>
           <div style={{ textAlign: 'center', marginBottom: '1.2rem' }}>
-            <span style={{ fontFamily: 'Montserrat, Arial, sans-serif', fontWeight: 'bold', fontSize: '1.5rem', color: '#0052A6', letterSpacing: '0.15rem', display: 'block' }}>SOLID</span>
-            <span style={{ fontFamily: 'Montserrat, Arial, sans-serif', fontSize: '1rem', color: '#2196f3', letterSpacing: '0.04rem', display: 'block', marginTop: '0.3rem' }}>soluciones y diseños industriales</span>
+            <span style={{ fontFamily: 'Montserrat, Arial, sans-serif', fontWeight: 'bold', fontSize: '1.5rem', color: '#1C4283', letterSpacing: '0.15rem', display: 'block' }}>SOLID</span>
+            <span style={{ fontFamily: 'Montserrat, Arial, sans-serif', fontSize: '1rem', color: '#1C4283', letterSpacing: '0.04rem', display: 'block', marginTop: '0.3rem' }}>soluciones y diseños industriales</span>
           </div>
 
       {/* Footer Content */}

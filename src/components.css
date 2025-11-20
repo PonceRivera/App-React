@@ -2,13 +2,14 @@
 
 /* Navigation & Header */
 header {
-  background: rgba(255, 255, 255, 0.95);
+  background: rgba(28, 28, 28, 0.98);
   backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   position: sticky;
   top: 0;
   z-index: 100;
   padding: 1rem 0;
+  margin: 0 -80px; /* Extiende el header hasta las franjas */
 }
 
 nav {

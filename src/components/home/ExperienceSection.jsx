@@ -5,7 +5,7 @@ export default function ExperienceSection() {
   return (
     <section style={{
       padding: '5rem 1rem',
-      background: '#f8fafc'
+      background: '#ffffff'
     }}>
       <div style={{
         maxWidth: '1280px',

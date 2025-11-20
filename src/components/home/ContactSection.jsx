@@ -24,8 +24,8 @@ export default function ContactSection() {
 
   return (
     <section id="contact" style={{
-      padding: '5rem 1rem',
-      background: '#f5f5f5',
+      padding: '5rem 1rem 8rem 1rem',
+      background: '#ffffff',
       fontFamily: 'Montserrat, sans-serif'
     }}>
       <div style={{
@@ -69,53 +69,9 @@ export default function ContactSection() {
             flexDirection: 'column',
             gap: '2rem'
           }}>
-            <div>
-              <div style={{ textAlign: 'center', marginBottom: '1.5rem' }}>
-                <span style={{ fontFamily: 'Montserrat, Arial, sans-serif', fontWeight: 'bold', fontSize: '2rem', color: '#0052A6', letterSpacing: '0.18rem', display: 'block' }}>SOLID</span>
-                <span style={{ fontFamily: 'Montserrat, Arial, sans-serif', fontSize: '1.1rem', color: '#2196f3', letterSpacing: '0.05rem', display: 'block', marginTop: '0.5rem' }}>soluciones y diseños industriales</span>
-              </div>
-              <span style={{
-                color: '#0052A6',
-                fontSize: '2.2rem',
-                fontWeight: 'bold',
-                letterSpacing: '0.15em',
-                fontFamily: 'Montserrat, sans-serif',
-                textAlign: 'center',
-                margin: 0,
-                display: 'block'
-              }}>SOLID</span>
-              <h2 style={{
-                fontSize: 'clamp(2rem, 5vw, 3rem)',
-                fontWeight: 700,
-                marginBottom: '1.2rem',
-                color: '#333',
-                fontFamily: 'Montserrat, sans-serif',
-                textAlign: 'center'
-              }}>
-                ¿TIENE ALGUNA PREGUNTA?
-              </h2>
-              <p style={{
-                fontSize: '1rem',
-                lineHeight: 1.8,
-                color: '#666',
-                marginBottom: '1.2rem',
-                fontFamily: 'Montserrat, sans-serif',
-                textAlign: 'center'
-              }}>
-                Puede contactarnos por este medio y le responderemos a la brevedad.
-              </p>
-              <span style={{
-                color: '#0052A6',
-                fontWeight: 'bold',
-                fontSize: '1.1rem',
-                marginBottom: '1.2rem',
-                textAlign: 'center',
-                display: 'block',
-                letterSpacing: '0.05em',
-                fontFamily: 'Montserrat, sans-serif'
-              }}>
-                Soluciones y Diseños Industriales
-              </span>
+            <div style={{ textAlign: 'center', marginBottom: '1.5rem' }}>
+              <span style={{ fontFamily: 'Montserrat, Arial, sans-serif', fontWeight: 'bold', fontSize: '2rem', color: '#0052A6', letterSpacing: '0.18rem', display: 'block' }}>SOLID</span>
+              <span style={{ fontFamily: 'Montserrat, Arial, sans-serif', fontSize: '1.1rem', color: '#2196f3', letterSpacing: '0.05rem', display: 'block', marginTop: '0.5rem' }}>soluciones y diseños industriales</span>
             </div>
 
             <div>
@@ -149,10 +105,10 @@ export default function ContactSection() {
             display: 'flex',
             flexDirection: 'column',
             gap: '1.5rem',
-            background: 'white',
+            background: 'transparent',
             padding: '2.5rem',
             borderRadius: '0.5rem',
-            boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)'
+            boxShadow: 'none'
           }}>
             <input
               name="name"

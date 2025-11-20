@@ -10,7 +10,7 @@ export default function HeroSection() {
   return (
     <div style={{
       minHeight: '100vh',
-      background: '#f5f5f5',
+      background: 'transparent',
       display: 'flex',
       flexDirection: 'column',
       position: 'relative',
@@ -88,7 +88,7 @@ export default function HeroSection() {
         justifyContent: 'center',
         padding: '2rem',
         position: 'relative',
-        background: 'linear-gradient(135deg, #f5f5f5 0%, #ffffff 100%)'
+        background: 'transparent'
       }}>
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
@@ -99,17 +99,32 @@ export default function HeroSection() {
             maxWidth: '1000px'
           }}
         >
+          <motion.img
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.6 }}
+
+            alt="SOLID Logo"
+            style={{
+              width: 'clamp(200px, 25vw, 400px)',
+              height: 'auto',
+              marginBottom: '2rem',
+              filter: 'drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2))',
+              borderRadius: '12px'
+            }}
+          />
           <motion.h1 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.8 }}
             style={{
-              fontSize: 'clamp(2.5rem, 6vw, 4rem)',
-              fontWeight: 800,
+              fontSize: 'clamp(4rem, 10vw, 8rem)',
+              fontWeight: 900,
               marginBottom: '1rem',
-              letterSpacing: '-0.025em',
-              color: '#1a1a1a',
-              fontFamily: 'Montserrat, sans-serif'
+              letterSpacing: '0.1em',
+              color: '#0052A6',
+              fontFamily: 'Arial Black, Arial, sans-serif',
+              textShadow: '2px 2px 4px rgba(0, 0, 0, 0.3)'
             }}
           >
             SOLID
@@ -119,11 +134,13 @@ export default function HeroSection() {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.4, duration: 0.8 }}
             style={{
-              fontSize: '1.25rem',
+              fontSize: 'clamp(1.5rem, 4vw, 2.5rem)',
               marginBottom: '2.5rem',
-              color: '#555',
-              lineHeight: 1.8,
-              fontFamily: 'Montserrat, sans-serif'
+              color: '#0052A6',
+              lineHeight: 1.4,
+              fontFamily: 'Arial Black, Arial, sans-serif',
+              fontWeight: 700,
+              textShadow: '1px 1px 2px rgba(0, 0, 0, 0.2)'
             }}
           >
             Soluciones y Diseños Industriales

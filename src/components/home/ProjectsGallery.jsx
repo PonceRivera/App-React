@@ -90,7 +90,7 @@ export default function ProjectsGallery() {
   return (
     <section style={{
       padding: '5rem 1rem',
-      background: '#ffffff',
+      background: 'transparent',
       textAlign: 'center'
     }}>
       <div style={{
@@ -128,10 +128,10 @@ export default function ProjectsGallery() {
               transition={{ delay: projectIndex * 0.1, duration: 0.5 }}
               viewport={{ once: true }}
               style={{
-                background: '#ffffff',
+                background: 'transparent',
                 borderRadius: '1rem',
                 overflow: 'hidden',
-                boxShadow: '0 10px 15px rgba(0, 0, 0, 0.1)',
+                boxShadow: 'none',
                 transition: 'all 0.3s ease'
               }}
             >

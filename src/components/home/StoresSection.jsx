@@ -181,7 +181,7 @@ export default function StoresSection() {
   return (
     <section style={{
       padding: '5rem 1rem 10rem 1rem',
-      background: '#ffffff',
+      background: 'transparent',
       fontFamily: 'Montserrat, sans-serif'
     }}>
       <div style={{
@@ -199,7 +199,8 @@ export default function StoresSection() {
             marginBottom: '3rem',
             textAlign: 'left',
             color: '#333',
-            fontFamily: 'Montserrat, sans-serif'
+            fontFamily: 'Montserrat, sans-serif',
+            textShadow: '2px 2px 4px rgba(255, 255, 255, 0.8)'
           }}
         >
           Stores

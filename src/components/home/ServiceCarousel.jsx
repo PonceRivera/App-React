@@ -46,7 +46,7 @@ export default function ServiceCarousel() {
   return (
     <section style={{
       padding: '5rem 1rem',
-      background: '#ffffff',
+      background: 'transparent',
       textAlign: 'center',
       fontFamily: 'Montserrat, sans-serif'
     }}>
@@ -69,7 +69,8 @@ export default function ServiceCarousel() {
             fontWeight: 700,
             color: '#333',
             marginBottom: '1rem',
-            fontFamily: 'Montserrat, sans-serif'
+            fontFamily: 'Montserrat, sans-serif',
+            textShadow: '2px 2px 4px rgba(255, 255, 255, 0.8)'
           }}>
             Nuestras gamas de productos
           </h2>
