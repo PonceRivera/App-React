@@ -69,6 +69,8 @@ export default function StoresSection() {
   const tabletImages = [
     '/products/raks para montaje1.jpeg',
     '/products/raks para montaje2.jpeg',
+    '/products/raks para montaje3.jpeg',
+    '/products/raks para montaje4.jpeg',
     '/products/soporte para tablet1.jpeg',
     '/products/soporte para tablet2.jpeg',
     '/products/soporte para tablet3.jpeg',
@@ -84,7 +86,6 @@ export default function StoresSection() {
 
   // Combinar todas las imágenes de la sección unificada
   const unifiedBoxesImages = [
-    ...raksMontajeImages,
     ...hdpeImages,
     ...ezProImages,
     ...ezProDivisionesImages

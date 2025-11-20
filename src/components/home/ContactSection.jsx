@@ -53,26 +53,31 @@ export default function ContactSection() {
             color: '#333',
             fontFamily: 'Montserrat, sans-serif'
           }}>
-            ¿TIENE ALGUNA PREGUNTA?
+            HABLEMOS
           </h2>
-          <p style={{
-            fontSize: '1rem',
-            lineHeight: 1.8,
-            color: '#666',
-            marginBottom: '2rem',
-            fontFamily: 'Montserrat, sans-serif'
-          }}>
-            Contáctenos para discutir sus requerimientos.
-          </p>
 
           <div style={{
             display: 'flex',
             flexDirection: 'column',
             gap: '2rem'
           }}>
-            <div style={{ textAlign: 'center', marginBottom: '1.5rem' }}>
-              <span style={{ fontFamily: 'Montserrat, Arial, sans-serif', fontWeight: 'bold', fontSize: '2rem', color: '#0052A6', letterSpacing: '0.18rem', display: 'block' }}>SOLID</span>
-              <span style={{ fontFamily: 'Montserrat, Arial, sans-serif', fontSize: '1.1rem', color: '#2196f3', letterSpacing: '0.05rem', display: 'block', marginTop: '0.5rem' }}>soluciones y diseños industriales</span>
+            <div>
+              <h3 style={{
+                fontSize: '1.125rem',
+                fontWeight: 700,
+                marginBottom: '0.5rem',
+                color: '#333',
+                fontFamily: 'Montserrat, sans-serif'
+              }}>
+                Estamos en
+              </h3>
+              <p style={{
+                color: '#666',
+                fontSize: '0.95rem',
+                fontFamily: 'Montserrat, sans-serif'
+              }}>
+                Ramos Arizpe, Coahuila
+              </p>
             </div>
 
             <div>
@@ -83,14 +88,49 @@ export default function ContactSection() {
                 color: '#333',
                 fontFamily: 'Montserrat, sans-serif'
               }}>
-                Horario
+                Contáctanos
               </h3>
+              <p style={{
+                color: '#666',
+                fontSize: '0.95rem',
+                fontFamily: 'Montserrat, sans-serif',
+                marginBottom: '0.5rem'
+              }}>
+                844 603 5776
+              </p>
               <p style={{
                 color: '#666',
                 fontSize: '0.95rem',
                 fontFamily: 'Montserrat, sans-serif'
               }}>
-                Lun - Vie: 9:00 - 18:00
+                cotiza@solidindustriales.com
+              </p>
+            </div>
+
+            <div>
+              <h3 style={{
+                fontSize: '1.125rem',
+                fontWeight: 700,
+                marginBottom: '0.5rem',
+                color: '#333',
+                fontFamily: 'Montserrat, sans-serif'
+              }}>
+                Horario de oficina
+              </h3>
+              <p style={{
+                color: '#666',
+                fontSize: '0.95rem',
+                fontFamily: 'Montserrat, sans-serif',
+                marginBottom: '0.5rem'
+              }}>
+                Lun- Vie: 9am- 8pm
+              </p>
+              <p style={{
+                color: '#666',
+                fontSize: '0.95rem',
+                fontFamily: 'Montserrat, sans-serif'
+              }}>
+                Sab: 10am-4pm
               </p>
             </div>
           </div>
