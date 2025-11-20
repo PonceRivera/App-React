@@ -1,15 +1,22 @@
 /* Main application styles */
 
 #root {
-  width: calc(100% - clamp(40px, 20vw, 160px));
+  width: calc(100% - 160px);
   min-height: 100vh;
   background: transparent;
-  margin: 0 clamp(20px, 10vw, 80px); /* Espacio responsive para las franjas de seguridad */
+  margin: 0 80px; /* Espacio para las franjas de seguridad */
   position: relative;
   z-index: 10;
 }
 
 @media (max-width: 768px) {
+  #root {
+    width: calc(100% - 50px);
+    margin: 0 25px;
+  }
+}
+
+@media (max-width: 480px) {
   #root {
     width: calc(100% - 40px);
     margin: 0 20px;

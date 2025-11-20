@@ -68,6 +68,35 @@ body {
   display: block !important;
 }
 
+/* Franjas más pequeñas en móviles */
+@media (max-width: 768px) {
+  .safety-stripes-left,
+  .safety-stripes-right {
+    width: 25px !important;
+    background: repeating-linear-gradient(
+      -45deg,
+      #FFFF00 0px,
+      #FFFF00 8px,
+      #000000 8px,
+      #000000 16px
+    ) !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .safety-stripes-left,
+  .safety-stripes-right {
+    width: 20px !important;
+    background: repeating-linear-gradient(
+      -45deg,
+      #FFFF00 0px,
+      #FFFF00 6px,
+      #000000 6px,
+      #000000 12px
+    ) !important;
+  }
+}
+
 .safety-stripes-left {
   left: 0 !important;
 }
@@ -338,22 +367,17 @@ section {
     font-size: 0.95rem;
   }
 
-  /* Franjas más delgadas en móvil */
-  body::before,
-  body::after {
-    width: 40px;
-    background: repeating-linear-gradient(
-      -45deg,
-      #FFFF00 0px,
-      #FFFF00 12px,
-      #000000 12px,
-      #000000 24px
-    );
-  }
-
+  /* Ajustar contenido para franjas más pequeñas en móvil */
   #root {
-    margin: 0 40px;
-    width: calc(100% - 80px);
+    margin: 0 25px;
+    width: calc(100% - 50px);
+  }
+}
+
+@media (max-width: 480px) {
+  #root {
+    margin: 0 20px;
+    width: calc(100% - 40px);
   }
 }
 
