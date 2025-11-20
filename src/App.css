@@ -1,12 +1,19 @@
 /* Main application styles */
 
 #root {
-  width: calc(100% - 160px);
+  width: calc(100% - clamp(40px, 20vw, 160px));
   min-height: 100vh;
   background: transparent;
-  margin: 0 80px; /* Espacio para las franjas de seguridad */
+  margin: 0 clamp(20px, 10vw, 80px); /* Espacio responsive para las franjas de seguridad */
   position: relative;
   z-index: 10;
+}
+
+@media (max-width: 768px) {
+  #root {
+    width: calc(100% - 40px);
+    margin: 0 20px;
+  }
 }
 
 /* Hero Section */
@@ -250,5 +257,63 @@ section.bg-dark p {
 .container-custom {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 0 1rem;
+  padding: 0 clamp(0.5rem, 3vw, 1rem);
+}
+
+/* Responsive Design Improvements */
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: clamp(2rem, 8vw, 3rem);
+    line-height: 1.1;
+  }
+  
+  .hero-content h2 {
+    font-size: clamp(1.2rem, 5vw, 1.8rem);
+    line-height: 1.2;
+  }
+  
+  .hero-content p {
+    font-size: 1rem;
+    line-height: 1.4;
+  }
+  
+  section {
+    padding: 2rem 0.5rem;
+  }
+  
+  .card-content {
+    padding: 1rem;
+  }
+  
+  .btn {
+    padding: 0.75rem 1.5rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-content {
+    padding: 1rem;
+  }
+  
+  .hero-content h1 {
+    font-size: clamp(1.8rem, 10vw, 2.5rem);
+    margin-bottom: 1rem;
+  }
+  
+  .hero-content h2 {
+    font-size: clamp(1rem, 6vw, 1.5rem);
+    margin-bottom: 1.5rem;
+  }
+  
+  section {
+    padding: 1.5rem 0.5rem;
+  }
+  
+  .grid-2,
+  .grid-3,
+  .grid-4 {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
 }

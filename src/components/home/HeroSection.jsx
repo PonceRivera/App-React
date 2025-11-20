@@ -1,8 +1,21 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Search, Heart, ShoppingCart, MessageCircle } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 export default function HeroSection() {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkIsMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    
+    checkIsMobile();
+    window.addEventListener('resize', checkIsMobile);
+    
+    return () => window.removeEventListener('resize', checkIsMobile);
+  }, []);
+
   const scrollToContact = () => {
     document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
   };
@@ -31,26 +44,40 @@ export default function HeroSection() {
         <div style={{
           maxWidth: '100%',
           margin: '0',
-          padding: '1rem 2rem',
+          padding: '1rem',
           display: 'flex',
           justifyContent: 'space-between',
-          alignItems: 'center'
+          alignItems: 'center',
+          flexWrap: 'wrap'
         }}>
           <div style={{
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'flex-start',
-            width: '100%',
-            padding: '1rem 0',
-            gap: '2rem'
+            flex: 1,
+            minWidth: '200px'
           }}>
-            <div style={{ textAlign: 'left', marginLeft: 0 }}>
-              <span style={{ fontFamily: 'Montserrat, Arial, sans-serif', fontWeight: 'bold', fontSize: '2.5rem', color: '#0052A6', letterSpacing: '0.2rem', display: 'block' }}>SOLID</span>
-              <span style={{ fontFamily: 'Montserrat, Arial, sans-serif', fontSize: '1.2rem', color: '#2196f3', letterSpacing: '0.05rem', display: 'block', marginTop: '0.5rem' }}>soluciones y diseños industriales</span>
+            <div style={{ textAlign: 'left' }}>
+              <span style={{ 
+                fontFamily: 'Montserrat, Arial, sans-serif', 
+                fontWeight: 'bold', 
+                fontSize: 'clamp(1.5rem, 4vw, 2.5rem)', 
+                color: '#0052A6', 
+                letterSpacing: '0.1rem', 
+                display: 'block' 
+              }}>SOLID</span>
+              <span style={{ 
+                fontFamily: 'Montserrat, Arial, sans-serif', 
+                fontSize: 'clamp(0.8rem, 2.5vw, 1.2rem)', 
+                color: '#2196f3', 
+                letterSpacing: '0.05rem', 
+                display: 'block', 
+                marginTop: '0.25rem' 
+              }}>soluciones y diseños industriales</span>
             </div>
           </div>
           <nav style={{
-            display: 'flex',
+            display: isMobile ? 'none' : 'flex',
             gap: '2rem',
             alignItems: 'center',
             fontSize: '0.95rem',
@@ -66,15 +93,20 @@ export default function HeroSection() {
               CATÁLOGOS
             </a>
           </nav>
-          <div style={{ display: 'flex', gap: '1.5rem', alignItems: 'center' }}>
-            <button style={{ background: 'none', border: 'none', color: 'white', cursor: 'pointer' }}>
-              <Search size={20} />
+          <div style={{ 
+            display: 'flex', 
+            gap: '1rem', 
+            alignItems: 'center',
+            flexShrink: 0
+          }}>
+            <button style={{ background: 'none', border: 'none', color: 'white', cursor: 'pointer', padding: '0.5rem' }}>
+              <Search size={18} />
             </button>
-            <button style={{ background: 'none', border: 'none', color: 'white', cursor: 'pointer' }}>
-              <Heart size={20} />
+            <button style={{ background: 'none', border: 'none', color: 'white', cursor: 'pointer', padding: '0.5rem' }}>
+              <Heart size={18} />
             </button>
-            <button style={{ background: 'none', border: 'none', color: 'white', cursor: 'pointer' }}>
-              <ShoppingCart size={20} />
+            <button style={{ background: 'none', border: 'none', color: 'white', cursor: 'pointer', padding: '0.5rem' }}>
+              <ShoppingCart size={18} />
             </button>
           </div>
         </div>
@@ -86,9 +118,10 @@ export default function HeroSection() {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        padding: '2rem',
+        padding: 'clamp(1rem, 4vw, 2rem)',
         position: 'relative',
-        background: 'transparent'
+        background: 'transparent',
+        minHeight: 'calc(100vh - 120px)'
       }}>
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
@@ -96,7 +129,9 @@ export default function HeroSection() {
           transition={{ duration: 0.8 }}
           style={{
             textAlign: 'center',
-            maxWidth: '1000px'
+            maxWidth: '1000px',
+            width: '100%',
+            padding: '0 1rem'
           }}
         >
           <motion.h1 
@@ -168,15 +203,15 @@ export default function HeroSection() {
       {/* Floating Chat Button */}
       <div style={{
         position: 'fixed',
-        bottom: '2rem',
-        right: '2rem',
+        bottom: 'clamp(1rem, 4vw, 2rem)',
+        right: 'clamp(1rem, 4vw, 2rem)',
         zIndex: 50
       }}>
         <motion.button
           whileHover={{ scale: 1.1 }}
           style={{
-            width: '4rem',
-            height: '4rem',
+            width: 'clamp(3rem, 12vw, 4rem)',
+            height: 'clamp(3rem, 12vw, 4rem)',
             background: '#0052A6',
             border: 'none',
             borderRadius: '50%',
@@ -190,7 +225,7 @@ export default function HeroSection() {
           onMouseEnter={(e) => e.target.style.background = '#003A7A'}
           onMouseLeave={(e) => e.target.style.background = '#0052A6'}
         >
-          <MessageCircle size={24} color="white" />
+          <MessageCircle size={isMobile ? 18 : 24} color="white" />
         </motion.button>
       </div>
     </div>

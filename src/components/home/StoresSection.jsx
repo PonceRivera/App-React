@@ -1,8 +1,22 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 export default function StoresSection() {
+  const [isMobile, setIsMobile] = useState(false);
+  const [isTablet, setIsTablet] = useState(false);
+
+  useEffect(() => {
+    const checkScreenSize = () => {
+      setIsMobile(window.innerWidth < 768);
+      setIsTablet(window.innerWidth >= 768 && window.innerWidth < 1024);
+    };
+    
+    checkScreenSize();
+    window.addEventListener('resize', checkScreenSize);
+    
+    return () => window.removeEventListener('resize', checkScreenSize);
+  }, []);
 
   const [activeHybridIndex, setActiveHybridIndex] = useState(0);
   const [activeMontajeImageIndex, setActiveMontajeImageIndex] = useState(0);
@@ -180,7 +194,7 @@ export default function StoresSection() {
 
   return (
     <section style={{
-      padding: '5rem 1rem 10rem 1rem',
+      padding: isMobile ? '2rem 0.5rem 4rem 0.5rem' : '5rem 1rem 10rem 1rem',
       background: 'transparent',
       fontFamily: 'Montserrat, sans-serif'
     }}>
@@ -207,9 +221,10 @@ export default function StoresSection() {
         </motion.h2>
         <div style={{
           display: 'grid',
-          gridTemplateColumns: 'repeat(2, minmax(450px, 1fr))',
-          gap: '2rem',
-          alignItems: 'start'
+          gridTemplateColumns: isMobile ? '1fr' : isTablet ? 'repeat(1, 1fr)' : 'repeat(2, minmax(300px, 1fr))',
+          gap: 'clamp(1rem, 3vw, 2rem)',
+          alignItems: 'start',
+          maxWidth: '100%'
         }}>
           {stores.map((store, index) => (
             <motion.div
@@ -221,19 +236,21 @@ export default function StoresSection() {
               style={{
                 background: store.color,
                 color: store.textColor || 'white',
-                padding: store.hasCarousel ? '0' : '3rem 2rem',
+                padding: store.hasCarousel ? '0' : 'clamp(1.5rem, 4vw, 3rem) clamp(1rem, 3vw, 2rem)',
                 borderRadius: '0.5rem',
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'space-between',
-                minHeight: '300px',
+                minHeight: 'clamp(250px, 50vw, 300px)',
                 border: store.borderColor ? `2px solid ${store.borderColor}` : 'none',
                 boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
                 transition: 'all 0.3s ease',
                 cursor: 'pointer',
                 overflow: 'hidden',
                 position: 'relative',
-                gridColumn: store.wide ? 'span 1' : undefined
+                gridColumn: store.wide && !isMobile && !isTablet ? 'span 2' : 'span 1',
+                width: '100%',
+                maxWidth: '100%'
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.transform = 'translateY(-5px)';
@@ -250,7 +267,7 @@ export default function StoresSection() {
                   <div style={{
                     position: 'relative',
                     width: '100%',
-                    height: '300px',
+                    height: 'clamp(200px, 40vw, 300px)',
                     background: '#f3f3f3',
                     overflow: 'hidden'
                   }}>
@@ -297,14 +314,14 @@ export default function StoresSection() {
                       onClick={store.handlePrev}
                       style={{
                         position: 'absolute',
-                        left: '1rem',
+                        left: 'clamp(0.5rem, 2vw, 1rem)',
                         top: '50%',
                         transform: 'translateY(-50%)',
                         background: 'rgba(255, 255, 255, 0.7)',
                         border: 'none',
                         borderRadius: '50%',
-                        width: '50px',
-                        height: '50px',
+                        width: 'clamp(35px, 8vw, 50px)',
+                        height: 'clamp(35px, 8vw, 50px)',
                         display: 'flex',
                         alignItems: 'center',
                         justifyContent: 'center',
@@ -315,20 +332,20 @@ export default function StoresSection() {
                       onMouseEnter={(e) => e.target.style.background = 'rgba(255, 255, 255, 0.9)'}
                       onMouseLeave={(e) => e.target.style.background = 'rgba(255, 255, 255, 0.7)'}
                     >
-                      <ChevronLeft size={24} color="#000" />
+                      <ChevronLeft size={isMobile ? 16 : 24} color="#000" />
                     </button>
                     <button
                       onClick={store.handleNext}
                       style={{
                         position: 'absolute',
-                        right: '1rem',
+                        right: 'clamp(0.5rem, 2vw, 1rem)',
                         top: '50%',
                         transform: 'translateY(-50%)',
                         background: 'rgba(255, 255, 255, 0.7)',
                         border: 'none',
                         borderRadius: '50%',
-                        width: '50px',
-                        height: '50px',
+                        width: 'clamp(35px, 8vw, 50px)',
+                        height: 'clamp(35px, 8vw, 50px)',
                         display: 'flex',
                         alignItems: 'center',
                         justifyContent: 'center',
@@ -339,7 +356,7 @@ export default function StoresSection() {
                       onMouseEnter={(e) => e.target.style.background = 'rgba(255, 255, 255, 0.9)'}
                       onMouseLeave={(e) => e.target.style.background = 'rgba(255, 255, 255, 0.7)'}
                     >
-                      <ChevronRight size={24} color="#000" />
+                      <ChevronRight size={isMobile ? 16 : 24} color="#000" />
                     </button>
                     {/* Indicadores de imagen */}
                     <div style={{
@@ -369,16 +386,17 @@ export default function StoresSection() {
                   </div>
                   {/* Contenido */}
                   <div style={{
-                    padding: '2rem',
+                    padding: 'clamp(1rem, 4vw, 2rem)',
                     background: store.color,
                     color: store.textColor || 'white',
                     borderTop: store.borderColor ? `2px solid ${store.borderColor}` : 'none'
                   }}>
                     <h3 style={{
-                      fontSize: '1.5rem',
+                      fontSize: 'clamp(1.1rem, 4vw, 1.5rem)',
                       fontWeight: 'bold',
                       marginBottom: '0.5rem',
-                      fontFamily: 'Montserrat, sans-serif'
+                      fontFamily: 'Montserrat, sans-serif',
+                      lineHeight: '1.2'
                     }}>
                       {store.title}
                     </h3>
@@ -424,10 +442,11 @@ export default function StoresSection() {
                 <>
                   <div>
                     <h3 style={{
-                      fontSize: '1.5rem',
+                      fontSize: 'clamp(1.1rem, 4vw, 1.5rem)',
                       fontWeight: 'bold',
                       marginBottom: '0.5rem',
-                      fontFamily: 'Montserrat, sans-serif'
+                      fontFamily: 'Montserrat, sans-serif',
+                      lineHeight: '1.2'
                     }}>
                       {store.title}
                     </h3>
