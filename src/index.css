@@ -54,9 +54,9 @@ body {
 .safety-stripes-left,
 .safety-stripes-right {
   position: fixed !important;
-  top: 80px !important; /* Empezar después del header */
-  bottom: 300px !important; /* Terminar antes de contactos */
-  height: auto !important;
+  top: 0 !important;
+  bottom: 0 !important;
+  height: 100vh !important;
   width: 80px !important;
   background: repeating-linear-gradient(
     -45deg,
@@ -369,19 +369,17 @@ section {
     font-size: 0.95rem;
   }
 
-  /* Ajustar franjas para móvil */
-  .safety-stripes-left,
-  .safety-stripes-right {
-    top: 60px !important; /* Header más pequeño en móvil */
-    bottom: 200px !important; /* Footer más pequeño en móvil */
+  /* Ajustar contenido para franjas más pequeñas en móvil */
+  #root {
+    margin: 0 25px;
+    width: calc(100% - 50px);
   }
 }
 
 @media (max-width: 480px) {
-  .safety-stripes-left,
-  .safety-stripes-right {
-    top: 50px !important;
-    bottom: 150px !important;
+  #root {
+    margin: 0 20px;
+    width: calc(100% - 40px);
   }
 }
 
