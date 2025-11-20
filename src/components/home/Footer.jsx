@@ -25,7 +25,17 @@ export default function Footer() {
         gap: '1rem',
         opacity: 1
       }}>
-        <img src="/lgo.jpeg" alt="Logo SOLID" style={{ width: '320px', maxWidth: '90vw', height: 'auto', margin: '0 auto 0.5rem auto', display: 'block', border: 'none', outline: 'none', background: '#1C4283' }} />
+        <img src="/lgo.jpeg" alt="Logo SOLID" style={{ 
+          width: 'clamp(200px, 50vw, 320px)', 
+          maxWidth: '90vw', 
+          height: 'auto', 
+          margin: '0 auto 0.5rem auto', 
+          display: 'block', 
+          border: 'none', 
+          outline: 'none', 
+          background: '#1C4283',
+          objectFit: 'contain'
+        }} />
         <h3 style={{
           fontSize: '1.75rem',
           fontWeight: 'bold',

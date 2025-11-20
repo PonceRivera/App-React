@@ -103,14 +103,16 @@ export default function HeroSection() {
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6 }}
-
+            src="/lgo.jpeg"
             alt="SOLID Logo"
             style={{
-              width: 'clamp(200px, 25vw, 400px)',
+              width: 'clamp(150px, 25vw, 400px)',
+              maxWidth: '90vw',
               height: 'auto',
               marginBottom: '2rem',
               filter: 'drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2))',
-              borderRadius: '12px'
+              borderRadius: '12px',
+              objectFit: 'contain'
             }}
           />
           <motion.h1 
