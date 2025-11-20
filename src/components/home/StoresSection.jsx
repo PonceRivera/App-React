@@ -40,8 +40,6 @@ export default function StoresSection() {
     'https://raw.githubusercontent.com/PonceRivera/App-React/main/src/assets/products/raks%20suministros6.jpeg'
   ];
   const raksMontajeImages = [
-    '/products/raks para montaje1.jpeg',
-    '/products/raks para montaje2.jpeg',
     '/products/raks para montaje3.jpeg',
     '/products/raks para montaje4.jpeg'
   ];
@@ -69,6 +67,8 @@ export default function StoresSection() {
     '/products/EZ pro3.jpeg'
   ];
   const tabletImages = [
+    '/products/raks para montaje1.jpeg',
+    '/products/raks para montaje2.jpeg',
     '/products/soporte para tablet1.jpeg',
     '/products/soporte para tablet2.jpeg',
     '/products/soporte para tablet3.jpeg',
