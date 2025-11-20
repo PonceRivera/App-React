@@ -90,7 +90,7 @@ export default function Footer() {
           </button>
         </div>
       </div>
-          <div style={{ textAlign: 'center', marginBottom: '0' }}>
+          <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
             <span style={{ fontFamily: 'Montserrat, Arial, sans-serif', fontWeight: 'bold', fontSize: '1.5rem', color: '#1C4283', letterSpacing: '0.15rem', display: 'block' }}>SOLID</span>
             <span style={{ fontFamily: 'Montserrat, Arial, sans-serif', fontSize: '1rem', color: '#1C4283', letterSpacing: '0.04rem', display: 'block', marginTop: '0.3rem' }}>soluciones y diseños industriales</span>
           </div>
