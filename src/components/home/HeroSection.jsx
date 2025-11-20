@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Search, Heart, ShoppingCart, MessageCircle } from 'lucide-react';
+import { Search, Heart, ShoppingCart } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 export default function HeroSection() {
@@ -201,34 +201,6 @@ export default function HeroSection() {
         </motion.div>
       </div>
 
-      {/* Floating Chat Button */}
-      <div style={{
-        position: 'fixed',
-        bottom: 'clamp(1rem, 4vw, 2rem)',
-        right: 'clamp(1rem, 4vw, 2rem)',
-        zIndex: 50
-      }}>
-        <motion.button
-          whileHover={{ scale: 1.1 }}
-          style={{
-            width: 'clamp(3rem, 12vw, 4rem)',
-            height: 'clamp(3rem, 12vw, 4rem)',
-            background: '#0052A6',
-            border: 'none',
-            borderRadius: '50%',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            cursor: 'pointer',
-            boxShadow: '0 4px 12px rgba(0, 82, 166, 0.3)',
-            transition: 'all 0.3s ease'
-          }}
-          onMouseEnter={(e) => e.target.style.background = '#003A7A'}
-          onMouseLeave={(e) => e.target.style.background = '#0052A6'}
-        >
-          <MessageCircle size={isMobile ? 18 : 24} color="white" />
-        </motion.button>
-      </div>
     </div>
   );
 }
