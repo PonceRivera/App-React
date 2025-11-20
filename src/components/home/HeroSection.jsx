@@ -81,7 +81,8 @@ export default function HeroSection() {
             gap: '2rem',
             alignItems: 'center',
             fontSize: '0.95rem',
-            fontFamily: 'Montserrat, sans-serif'
+            fontFamily: 'Montserrat, sans-serif',
+            marginRight: '0' // Franja pegada totalmente a la derecha
           }}>
             <a href="#" style={{ color: 'white', textDecoration: 'none', fontWeight: 500 }}>
               PRODUCTOS

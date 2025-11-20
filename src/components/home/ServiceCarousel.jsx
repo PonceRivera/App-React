@@ -35,8 +35,8 @@ export default function ServiceCarousel() {
     },
     { 
       id: 6,
-      title: "Expositores",
-      subtitle: "La recogida",
+      title: "Diseño y fabricación de cajas",
+      subtitle: "Materiales HDPE, EZ-pro y varios (MDF forrado, etc)",
       color: "#0052A6"
     }
   ];
