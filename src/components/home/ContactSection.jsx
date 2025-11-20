@@ -24,10 +24,10 @@ export default function ContactSection() {
 
   return (
     <section id="contact" style={{
-      padding: '5rem 1rem 0 1rem',
+      padding: '5rem 1rem 3rem 1rem',
       background: '#ffffff',
       fontFamily: 'Montserrat, sans-serif',
-      marginBottom: '-1px'
+      marginBottom: '-5px'
     }}>
       <div style={{
         maxWidth: '1280px',

@@ -6,10 +6,10 @@ export default function Footer() {
     <footer style={{
       background: '#1C1C1C',
       color: '#e0e0e0',
-      padding: '3rem 2rem 4rem',
+      padding: '0 2rem 4rem',
       fontFamily: 'Montserrat, sans-serif',
       opacity: 1,
-      marginTop: '-1px'
+      marginTop: '-5px'
     }}>
       {/* Newsletter Section */}
       <div style={{
