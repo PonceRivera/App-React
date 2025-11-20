@@ -82,16 +82,27 @@ export default function HeroSection() {
             alignItems: 'center',
             fontSize: '0.95rem',
             fontFamily: 'Montserrat, sans-serif',
-            marginRight: '0' // Franja pegada totalmente a la derecha
+            marginRight: '100px' // Mover navegación hacia la izquierda para evitar franjas
           }}>
-            <a href="#" style={{ color: 'white', textDecoration: 'none', fontWeight: 500 }}>
+            <a 
+              href="#stores" 
+              style={{ color: 'white', textDecoration: 'none', fontWeight: 500, cursor: 'pointer' }}
+              onClick={(e) => {
+                e.preventDefault();
+                document.querySelector('#stores')?.scrollIntoView({ behavior: 'smooth' });
+              }}
+            >
               PRODUCTOS
             </a>
-            <a href="#" style={{ color: 'white', textDecoration: 'none', fontWeight: 500 }}>
-              SERVICIOS
-            </a>
-            <a href="#" style={{ color: 'white', textDecoration: 'none', fontWeight: 500 }}>
-              CATÁLOGOS
+            <a 
+              href="#contact" 
+              style={{ color: 'white', textDecoration: 'none', fontWeight: 500, cursor: 'pointer' }}
+              onClick={(e) => {
+                e.preventDefault();
+                document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' });
+              }}
+            >
+              CONTACTO
             </a>
           </nav>
           <div style={{ 

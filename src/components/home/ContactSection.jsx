@@ -1,13 +1,25 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 
 export default function ContactSection() {
+  const [isMobile, setIsMobile] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
     email: '',
     message: ''
   });
+
+  useEffect(() => {
+    const checkIsMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    
+    checkIsMobile();
+    window.addEventListener('resize', checkIsMobile);
+    
+    return () => window.removeEventListener('resize', checkIsMobile);
+  }, []);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -24,7 +36,7 @@ export default function ContactSection() {
 
   return (
     <section id="contact" style={{
-      padding: '5rem 1rem 3rem 1rem',
+      padding: isMobile ? '3rem 30px 2rem 30px' : '5rem 1rem 3rem 1rem',
       background: '#ffffff',
       fontFamily: 'Montserrat, sans-serif',
       marginBottom: '-5px'
@@ -33,8 +45,8 @@ export default function ContactSection() {
         maxWidth: '1280px',
         margin: '0 auto',
         display: 'grid',
-        gridTemplateColumns: '1fr 1fr',
-        gap: '4rem',
+        gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr',
+        gap: isMobile ? '2rem' : '4rem',
         alignItems: 'center'
       }}>
         <motion.div

@@ -125,7 +125,7 @@ export default function StoresSection() {
     },
     {
       id: 3,
-      title: "Soportes para tablet",
+      title: "Diseño y fabricación con materiales como HDPE y EZPRO",
       subtitle: "Soluciones para montaje de tablets en racks y estaciones",
       color: "#F0F7FF",
       textColor: "#333",
@@ -137,12 +137,13 @@ export default function StoresSection() {
       setActiveIndex: setActiveTabletIndex,
       handlePrev: () => setActiveTabletIndex((prev) => (prev === 0 ? tabletImages.length - 1 : prev - 1)),
       handleNext: () => setActiveTabletIndex((prev) => (prev === tabletImages.length - 1 ? 0 : prev + 1)),
-      wide: true
+      wide: false,
+      centered: true
     }
   ];
 
   return (
-    <section style={{
+    <section id="stores" style={{
       padding: isMobile ? '2rem 0.5rem 4rem 0.5rem' : '5rem 1rem 10rem 1rem',
       background: 'transparent',
       fontFamily: 'Montserrat, sans-serif'
@@ -168,14 +169,17 @@ export default function StoresSection() {
         >
           Stores
         </motion.h2>
+
+        {/* Grid superior con las dos primeras secciones */}
         <div style={{
           display: 'grid',
-          gridTemplateColumns: isMobile ? '1fr' : isTablet ? 'repeat(1, 1fr)' : 'repeat(2, minmax(300px, 1fr))',
+          gridTemplateColumns: isMobile ? '1fr' : 'repeat(2, minmax(300px, 1fr))',
           gap: 'clamp(1rem, 3vw, 2rem)',
           alignItems: 'start',
-          maxWidth: '100%'
+          maxWidth: '100%',
+          marginBottom: 'clamp(1rem, 3vw, 2rem)'
         }}>
-          {stores.map((store, index) => (
+          {stores.slice(0, 2).map((store, index) => (
             <motion.div
               key={store.id}
               initial={{ opacity: 0, y: 30 }}
@@ -216,7 +220,7 @@ export default function StoresSection() {
                   <div style={{
                     position: 'relative',
                     width: '100%',
-                    height: 'clamp(200px, 40vw, 300px)',
+                    height: 'clamp(300px, 50vw, 450px)',
                     background: '#f3f3f3',
                     overflow: 'hidden'
                   }}>
@@ -441,6 +445,265 @@ export default function StoresSection() {
               )}
             </motion.div>
           ))}
+        </div>
+
+        {/* Sección centrada para tablet */}
+        <div style={{
+          display: 'flex',
+          justifyContent: 'center',
+          maxWidth: '100%'
+        }}>
+          <div style={{
+            width: isMobile ? '100%' : '60%',
+            maxWidth: '600px'
+          }}>
+            {stores.slice(2, 3).map((store, index) => (
+              <motion.div
+                key={store.id}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2, duration: 0.5 }}
+                viewport={{ once: true }}
+                style={{
+                  background: store.color,
+                  color: store.textColor || 'white',
+                  padding: store.hasCarousel ? '0' : 'clamp(1.5rem, 4vw, 3rem) clamp(1rem, 3vw, 2rem)',
+                  borderRadius: '0.5rem',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'space-between',
+                  minHeight: 'clamp(250px, 40vw, 350px)',
+                  border: store.borderColor ? `2px solid ${store.borderColor}` : 'none',
+                  boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
+                  transition: 'all 0.3s ease',
+                  cursor: 'pointer',
+                  overflow: 'hidden',
+                  position: 'relative',
+                  width: '100%'
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = 'translateY(-5px)';
+                  e.currentTarget.style.boxShadow = '0 12px 24px rgba(0, 0, 0, 0.15)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = 'translateY(0)';
+                  e.currentTarget.style.boxShadow = '0 4px 6px rgba(0, 0, 0, 0.1)';
+                }}
+              >
+                {store.hasCarousel ? (
+                  <>
+                    {/* Carrusel de imágenes */}
+                    <div style={{
+                      position: 'relative',
+                      width: '100%',
+                      height: 'clamp(320px, 45vw, 400px)',
+                      background: '#f3f3f3',
+                      overflow: 'hidden'
+                    }}>
+                      <motion.img
+                        key={store.activeIndex}
+                        src={store.images[store.activeIndex]}
+                        alt={store.title}
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ duration: 0.5 }}
+                        style={{
+                          width: '100%',
+                          height: '100%',
+                          objectFit: 'cover',
+                          background: '#f3f3f3',
+                          display: 'block'
+                        }}
+                        onError={e => {
+                          e.target.onerror = null;
+                          e.target.src = 'https://raw.githubusercontent.com/PonceRivera/App-React/main/src/assets/products/fallback-image.png';
+                          e.target.style.background = '#f3f3f3';
+                        }}
+                      />
+                      {/* Botones de navegación */}
+                      <button
+                        onClick={store.handlePrev}
+                        style={{
+                          position: 'absolute',
+                          left: 'clamp(0.5rem, 2vw, 1rem)',
+                          top: '50%',
+                          transform: 'translateY(-50%)',
+                          background: 'rgba(255, 255, 255, 0.7)',
+                          border: 'none',
+                          borderRadius: '50%',
+                          width: 'clamp(35px, 8vw, 50px)',
+                          height: 'clamp(35px, 8vw, 50px)',
+                          display: 'flex',
+                          alignItems: 'center',
+                          justifyContent: 'center',
+                          cursor: 'pointer',
+                          zIndex: 10,
+                          transition: 'all 0.2s'
+                        }}
+                        onMouseEnter={(e) => e.target.style.background = 'rgba(255, 255, 255, 0.9)'}
+                        onMouseLeave={(e) => e.target.style.background = 'rgba(255, 255, 255, 0.7)'}
+                      >
+                        <ChevronLeft size={isMobile ? 16 : 24} color="#000" />
+                      </button>
+                      <button
+                        onClick={store.handleNext}
+                        style={{
+                          position: 'absolute',
+                          right: 'clamp(0.5rem, 2vw, 1rem)',
+                          top: '50%',
+                          transform: 'translateY(-50%)',
+                          background: 'rgba(255, 255, 255, 0.7)',
+                          border: 'none',
+                          borderRadius: '50%',
+                          width: 'clamp(35px, 8vw, 50px)',
+                          height: 'clamp(35px, 8vw, 50px)',
+                          display: 'flex',
+                          alignItems: 'center',
+                          justifyContent: 'center',
+                          cursor: 'pointer',
+                          zIndex: 10,
+                          transition: 'all 0.2s'
+                        }}
+                        onMouseEnter={(e) => e.target.style.background = 'rgba(255, 255, 255, 0.9)'}
+                        onMouseLeave={(e) => e.target.style.background = 'rgba(255, 255, 255, 0.7)'}
+                      >
+                        <ChevronRight size={isMobile ? 16 : 24} color="#000" />
+                      </button>
+                      {/* Indicadores de imagen */}
+                      <div style={{
+                        position: 'absolute',
+                        bottom: '1rem',
+                        left: '50%',
+                        transform: 'translateX(-50%)',
+                        display: 'flex',
+                        gap: '0.5rem',
+                        zIndex: 10
+                      }}>
+                        {store.images.map((_, idx) => (
+                          <div
+                            key={idx}
+                            style={{
+                              width: idx === store.activeIndex ? '24px' : '8px',
+                              height: '8px',
+                              background: idx === store.activeIndex ? '#0052A6' : 'rgba(255, 255, 255, 0.5)',
+                              borderRadius: '4px',
+                              cursor: 'pointer',
+                              transition: 'all 0.3s'
+                            }}
+                            onClick={() => store.setActiveIndex(idx)}
+                          />
+                        ))}
+                      </div>
+                    </div>
+                    {/* Contenido */}
+                    <div style={{
+                      padding: 'clamp(1rem, 4vw, 2rem)',
+                      background: store.color,
+                      color: store.textColor || 'white',
+                      borderTop: store.borderColor ? `2px solid ${store.borderColor}` : 'none'
+                    }}>
+                      <h3 style={{
+                        fontSize: 'clamp(1.1rem, 4vw, 1.5rem)',
+                        fontWeight: 'bold',
+                        marginBottom: '0.5rem',
+                        fontFamily: 'Montserrat, sans-serif',
+                        lineHeight: '1.2'
+                      }}>
+                        {store.title}
+                      </h3>
+                      <p style={{
+                        fontSize: '0.95rem',
+                        opacity: 0.9,
+                        lineHeight: 1.5,
+                        marginBottom: '1.5rem',
+                        fontFamily: 'Montserrat, sans-serif'
+                      }}>
+                        {store.subtitle}
+                      </p>
+                      <button style={{
+                        background: store.color === '#f5f5f5' ? '#1C1C1C' : 'transparent',
+                        color: store.color === '#f5f5f5' ? 'white' : 'inherit',
+                        border: store.color === '#f5f5f5' ? 'none' : `2px solid ${store.textColor || 'white'}`,
+                        padding: '0.75rem 1.5rem',
+                        borderRadius: '2rem',
+                        fontSize: '0.85rem',
+                        fontWeight: 600,
+                        cursor: 'pointer',
+                        transition: 'all 0.3s ease',
+                        fontFamily: 'Montserrat, sans-serif'
+                      }}
+                      onMouseEnter={(e) => {
+                        if (store.color === '#f5f5f5') {
+                          e.target.style.background = '#555';
+                        } else {
+                          e.target.style.background = store.textColor || 'white';
+                          e.target.style.color = store.color;
+                        }
+                      }}
+                      onMouseLeave={(e) => {
+                        e.target.style.background = store.color === '#f5f5f5' ? '#1C1C1C' : 'transparent';
+                        e.target.style.color = store.color === '#f5f5f5' ? 'white' : 'inherit';
+                      }}
+                      >
+                        {store.button}
+                      </button>
+                    </div>
+                  </>
+                ) : (
+                  <>
+                    <div>
+                      <h3 style={{
+                        fontSize: 'clamp(1.1rem, 4vw, 1.5rem)',
+                        fontWeight: 'bold',
+                        marginBottom: '0.5rem',
+                        fontFamily: 'Montserrat, sans-serif',
+                        lineHeight: '1.2'
+                      }}>
+                        {store.title}
+                      </h3>
+                      <p style={{
+                        fontSize: '0.95rem',
+                        opacity: 0.9,
+                        lineHeight: 1.5,
+                        fontFamily: 'Montserrat, sans-serif'
+                      }}>
+                        {store.subtitle}
+                      </p>
+                    </div>
+                    <button style={{
+                      background: store.color === '#f5f5f5' ? '#1C1C1C' : 'transparent',
+                      color: store.color === '#f5f5f5' ? 'white' : 'inherit',
+                      border: store.color === '#f5f5f5' ? 'none' : `2px solid ${store.textColor || 'white'}`,
+                      padding: '0.75rem 1.5rem',
+                      borderRadius: '2rem',
+                      fontSize: '0.85rem',
+                      fontWeight: 600,
+                      cursor: 'pointer',
+                      transition: 'all 0.3s ease',
+                      alignSelf: 'flex-start',
+                      marginTop: '1.5rem',
+                      fontFamily: 'Montserrat, sans-serif'
+                    }}
+                    onMouseEnter={(e) => {
+                      if (store.color === '#f5f5f5') {
+                        e.target.style.background = '#555';
+                      } else {
+                        e.target.style.background = store.textColor || 'white';
+                        e.target.style.color = store.color;
+                      }
+                    }}
+                    onMouseLeave={(e) => {
+                      e.target.style.background = store.color === '#f5f5f5' ? '#1C1C1C' : 'transparent';
+                      e.target.style.color = store.color === '#f5f5f5' ? 'white' : 'inherit';
+                    }}
+                    >
+                      {store.button}
+                    </button>
+                  </>
+                )}
+              </motion.div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
