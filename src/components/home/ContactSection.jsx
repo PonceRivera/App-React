@@ -39,15 +39,34 @@ export default function ContactSection() {
       padding: isMobile ? '3rem 30px 2rem 30px' : '5rem 1rem 3rem 1rem',
       background: '#ffffff',
       fontFamily: 'Montserrat, sans-serif',
-      marginBottom: '-5px'
+      marginBottom: '-5px',
+      position: 'relative',
+      overflow: 'hidden'
     }}>
+      <div style={{
+        position: 'absolute',
+        top: '-50%',
+        left: '-50%',
+        right: '-50%',
+        bottom: '-50%',
+        backgroundImage: `url(/Patron.jpeg?v=${Date.now()})`,
+        backgroundSize: '300px 300px',
+        backgroundRepeat: 'repeat',
+        transform: 'rotate(-5deg)',
+        transformOrigin: 'center center',
+        opacity: 0.08,
+        zIndex: 0,
+        pointerEvents: 'none'
+      }}></div>
       <div style={{
         maxWidth: '1280px',
         margin: '0 auto',
         display: 'grid',
         gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr',
         gap: isMobile ? '2rem' : '4rem',
-        alignItems: 'center'
+        alignItems: 'center',
+        position: 'relative',
+        zIndex: 1
       }}>
         <motion.div
           initial={{ opacity: 0, x: -30 }}

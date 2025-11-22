@@ -342,8 +342,25 @@ export default function StoresSection() {
                     padding: 'clamp(1rem, 4vw, 2rem)',
                     background: store.color,
                     color: store.textColor || 'white',
-                    borderTop: store.borderColor ? `2px solid ${store.borderColor}` : 'none'
+                    borderTop: store.borderColor ? `2px solid ${store.borderColor}` : 'none',
+                    position: 'relative',
+                    overflow: 'hidden'
                   }}>
+                    <div style={{
+                      position: 'absolute',
+                      top: '-50%',
+                      left: '-50%',
+                      right: '-50%',
+                      bottom: '-50%',
+                      backgroundImage: `url(/Patron.jpeg?v=${Date.now()})`,
+                      backgroundSize: '300px 300px',
+                      backgroundRepeat: 'repeat',
+                      transform: 'rotate(-5deg)',
+                      transformOrigin: 'center center',
+                      opacity: 0.15,
+                      zIndex: 0,
+                      pointerEvents: 'none'
+                    }}></div>
                     <h3 style={{
                       fontSize: 'clamp(1.1rem, 4vw, 1.5rem)',
                       fontWeight: 'bold',
@@ -358,7 +375,9 @@ export default function StoresSection() {
                       opacity: 0.9,
                       lineHeight: 1.5,
                       marginBottom: '1.5rem',
-                      fontFamily: 'Montserrat, sans-serif'
+                      fontFamily: 'Montserrat, sans-serif',
+                      position: 'relative',
+                      zIndex: 1
                     }}>
                       {store.subtitle}
                     </p>
@@ -372,7 +391,9 @@ export default function StoresSection() {
                       fontWeight: 600,
                       cursor: 'pointer',
                       transition: 'all 0.3s ease',
-                      fontFamily: 'Montserrat, sans-serif'
+                      fontFamily: 'Montserrat, sans-serif',
+                      position: 'relative',
+                      zIndex: 1
                     }}
                     onMouseEnter={(e) => {
                       if (store.color === '#f5f5f5') {
@@ -600,8 +621,25 @@ export default function StoresSection() {
                       padding: 'clamp(1rem, 4vw, 2rem)',
                       background: store.color,
                       color: store.textColor || 'white',
-                      borderTop: store.borderColor ? `2px solid ${store.borderColor}` : 'none'
+                      borderTop: store.borderColor ? `2px solid ${store.borderColor}` : 'none',
+                      position: 'relative',
+                      overflow: 'hidden'
                     }}>
+                      <div style={{
+                        position: 'absolute',
+                        top: '-50%',
+                        left: '-50%',
+                        right: '-50%',
+                        bottom: '-50%',
+                        backgroundImage: `url(/Patron.jpeg?v=${Date.now()})`,
+                        backgroundSize: '300px 300px',
+                        backgroundRepeat: 'repeat',
+                        transform: 'rotate(-5deg)',
+                        transformOrigin: 'center center',
+                        opacity: 0.15,
+                        zIndex: 0,
+                        pointerEvents: 'none'
+                      }}></div>
                       <h3 style={{
                         fontSize: 'clamp(1.1rem, 4vw, 1.5rem)',
                         fontWeight: 'bold',
@@ -616,7 +654,9 @@ export default function StoresSection() {
                         opacity: 0.9,
                         lineHeight: 1.5,
                         marginBottom: '1.5rem',
-                        fontFamily: 'Montserrat, sans-serif'
+                        fontFamily: 'Montserrat, sans-serif',
+                        position: 'relative',
+                        zIndex: 1
                       }}>
                         {store.subtitle}
                       </p>
@@ -630,7 +670,9 @@ export default function StoresSection() {
                         fontWeight: 600,
                         cursor: 'pointer',
                         transition: 'all 0.3s ease',
-                        fontFamily: 'Montserrat, sans-serif'
+                        fontFamily: 'Montserrat, sans-serif',
+                        position: 'relative',
+                        zIndex: 1
                       }}
                       onMouseEnter={(e) => {
                         if (store.color === '#f5f5f5') {
